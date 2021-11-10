@@ -27,19 +27,13 @@ def Message():
         dataSend = {
             "version": "2.0",
             "template": {
-                "outputs": [
-                    {
-                        "carousel": {
-                            "type" : "basicCard",
-                            "items": [
-                                {
-                                    "title" : "",
-                                    "description" : "안녕하세요"
-                                }
-                            ]
-                        }
-                    }
-                ]
+              "outputs": [
+                {
+                  "simpleText": {
+                    "text": "간단한 텍스트 요소입니다."
+                  }
+                }
+              ]
             }
         }
 
@@ -49,76 +43,81 @@ def Message():
           "template": {
             "outputs": [
               {
-                "listCard": {
-                  "header": {
-                    "title": "주요 보안뉴스스"
-                  },
+                "carousel": {
+                  "type": "basicCard",
                   "items": [
                     {
                       "title": boannews.news_title_1,
-                      "link": {
-                        "web": boannews.news_link_1
-                      }
+                      "thumbnail": {
+                        "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
+                      },
+                      "buttons": [
+                        {
+                          "action": "webLink",
+                          "label": "구경하기",
+                          "webLinkUrl": boannews.news_title_1,
+                        }
+                      ]
                     },
                     {
                       "title": boannews.news_title_2,
-                      "link": {
-                        "web": boannews.news_link_2
-                      }
+                      "thumbnail": {
+                        "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
+                      },
+                      "buttons": [
+                        {
+                          "action": "webLink",
+                          "label": "구경하기",
+                          "webLinkUrl": boannews.news_title_2,
+                        }
+                      ]
                     },
                     {
                       "title": boannews.news_title_3,
-                      "link": {
-                        "web": boannews.news_link_3
-                      }
+                      "thumbnail": {
+                        "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
+                      },
+                      "buttons": [
+                        {
+                          "action": "webLink",
+                          "label": "구경하기",
+                          "webLinkUrl": boannews.news_title_3,
+                        }
+                      ]
                     },
                     {
                       "title": boannews.news_title_4,
-                      "link": {
-                        "web": boannews.news_link_4
-                      }
+                      "thumbnail": {
+                        "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
+                      },
+                      "buttons": [
+                        {
+                          "action": "webLink",
+                          "label": "구경하기",
+                          "webLinkUrl": boannews.news_title_4,
+                        }
+                      ]
                     },
                     {
                       "title": boannews.news_title_5,
-                      "link": {
-                        "web": boannews.news_link_5
-                      }
-                    }
-                  ],
-                  "buttons": [
-                    {
-                      "label": "보안뉴스",
-                      "action": "webLink",
-                      "webLinkUrl": "https://www.boannews.com/"
-                    }
+                      "thumbnail": {
+                        "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
+                      },
+                      "buttons": [
+                        {
+                          "action": "webLink",
+                          "label": "구경하기",
+                          "webLinkUrl": boannews.news_title_5,
+                        }
+                      ]
+                    },
                   ]
                 }
               }
             ]
           }
+          
         }
-
-    elif content == "취업정보":
-        dataSend = {
-            "version": "2.0",
-            "template": {
-                "outputs": [
-                    {
-                        "carousel": {
-                            "type" : "basicCard",
-                            "items": [
-                                {
-                                    "title" : "취업정보",
-                                    "description" : "안녕하세요. 기능 준비중 입니다."
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        }
-        
-        
 
     return jsonify(dataSend)
 
