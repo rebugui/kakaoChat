@@ -40,22 +40,22 @@ news_img_1 = news_img_1.replace("background: #fff url(","")
 news_img_1 = news_img_1.replace(") center center no-repeat;background-size:cover;","")
 news_img_1 = "https://www.boannews.com/"+news_img_1
 
-news_img_2 = soup.find('div', id='headline0').find(class_='headline_big_img').get('style')
+news_img_2 = soup.find('div', id='headline1').find(class_='headline_big_img').get('style')
 news_img_2 = news_img_2.replace("background: #fff url(","")
 news_img_2 = news_img_2.replace(") center center no-repeat;background-size:cover;","")
 news_img_2 = "https://www.boannews.com/"+news_img_2
 
-news_img_3 = soup.find('div', id='headline0').find(class_='headline_big_img').get('style')
+news_img_3 = soup.find('div', id='headline2').find(class_='headline_big_img').get('style')
 news_img_3 = news_img_3.replace("background: #fff url(","")
 news_img_3 = news_img_3.replace(") center center no-repeat;background-size:cover;","")
 news_img_3 = "https://www.boannews.com/"+news_img_3
 
-news_img_4 = soup.find('div', id='headline0').find(class_='headline_big_img').get('style')
+news_img_4 = soup.find('div', id='headline3').find(class_='headline_big_img').get('style')
 news_img_4 = news_img_4.replace("background: #fff url(","")
 news_img_4 = news_img_4.replace(") center center no-repeat;background-size:cover;","")
 news_img_4 = "https://www.boannews.com/"+news_img_4
 
-news_img_5 = soup.find('div', id='headline0').find(class_='headline_big_img').get('style')
+news_img_5 = soup.find('div', id='headline4').find(class_='headline_big_img').get('style')
 news_img_5 = news_img_5.replace("background: #fff url(","")
 news_img_5 = news_img_5.replace(") center center no-repeat;background-size:cover;","")
 news_img_5 = "https://www.boannews.com/"+news_img_5
