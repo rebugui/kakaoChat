@@ -51,39 +51,45 @@ def Message():
               {
                 "listCard": {
                   "header": {
-                    "title": "카카오 i 디벨로퍼스를 소개합니다"
+                    "title": "주요 보안뉴스스"
                   },
                   "items": [
                     {
-                      "title": "Kakao i Developers",
-                      "description": "새로운 AI의 내일과 일상의 변화",
-                      "imageUrl": "http://k.kakaocdn.net/dn/APR96/btqqH7zLanY/kD5mIPX7TdD2NAxgP29cC0/1x1.jpg",
+                      "title": boannews.news_title_1,
                       "link": {
-                        "web": "https://namu.wiki/w/%EB%9D%BC%EC%9D%B4%EC%96%B8(%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88)"
+                        "web": boannews.news_link_1
                       }
                     },
                     {
-                      "title": "Kakao i Open Builder",
-                      "description": "카카오톡 채널 챗봇 만들기",
-                      "imageUrl": "http://k.kakaocdn.net/dn/N4Epz/btqqHCfF5II/a3kMRckYml1NLPEo7nqTmK/1x1.jpg",
+                      "title": boannews.news_title_2,
                       "link": {
-                        "web": "https://namu.wiki/w/%EB%AC%B4%EC%A7%80(%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88)"
+                        "web": boannews.news_link_2
                       }
                     },
                     {
-                      "title": "Kakao i Voice Service",
-                      "description": "보이스봇 / KVS 제휴 신청하기",
-                      "imageUrl": "http://k.kakaocdn.net/dn/bE8AKO/btqqFHI6vDQ/mWZGNbLIOlTv3oVF1gzXKK/1x1.jpg",
+                      "title": boannews.news_title_3,
                       "link": {
-                        "web": "https://namu.wiki/w/%EC%96%B4%ED%94%BC%EC%B9%98"
+                        "web": boannews.news_link_3
+                      }
+                    },
+                    {
+                      "title": boannews.news_title_4,
+                      "link": {
+                        "web": boannews.news_link_4
+                      }
+                    },
+                    {
+                      "title": boannews.news_title_5,
+                      "link": {
+                        "web": boannews.news_link_5
                       }
                     }
                   ],
                   "buttons": [
                     {
-                      "label": "구경가기",
+                      "label": "보안뉴스",
                       "action": "webLink",
-                      "webLinkUrl": "https://namu.wiki/w/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88"
+                      "webLinkUrl": "https://www.boannews.com/"
                     }
                   ]
                 }
