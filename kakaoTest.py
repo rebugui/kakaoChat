@@ -49,59 +49,59 @@ def Message():
                     {
                       "title": boannews.news_title_1,
                       "thumbnail": {
-                        "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
+                        "imageUrl": boannews.news_img_1
                       },
                       "buttons": [
                         {
                           "action": "webLink",
                           "label": "구경하기",
-                          "webLinkUrl": boannews.news_title_1
+                          "webLinkUrl": boannews.news_link_1
                         }
                       ]
                     },
                     {
                       "title": boannews.news_title_2,
                       "thumbnail": {
-                        "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
+                        "imageUrl": boannews.news_img_2
                       },
                       "buttons": [
                         {
                           "action": "webLink",
                           "label": "구경하기",
-                          "webLinkUrl": boannews.news_title_2
+                          "webLinkUrl": boannews.news_link_2
                         }
                       ]
                     },
                     {
                       "title": boannews.news_title_3,
                       "thumbnail": {
-                        "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
+                        "imageUrl": boannews.news_img_3
                       },
                       "buttons": [
                         {
                           "action": "webLink",
                           "label": "구경하기",
-                          "webLinkUrl": boannews.news_title_3
+                          "webLinkUrl": boannews.news_link_3
                         }
                       ]
                     },
                     {
                       "title": boannews.news_title_4,
                       "thumbnail": {
-                        "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
+                        "imageUrl": boannews.news_img_4
                       },
                       "buttons": [
                         {
                           "action": "webLink",
                           "label": "구경하기",
-                          "webLinkUrl": boannews.news_title_4
+                          "webLinkUrl": boannews.news_link_4
                         }
                       ]
                     },
                     {
                       "title": boannews.news_title_5,
                       "thumbnail": {
-                        "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
+                        "imageUrl": boannews.news_img_5
                       },
                       "buttons": [
                         {
