@@ -44,7 +44,7 @@ def Message():
             }
         }
 
-    if content == "보안뉴스":
+    elif content == "보안뉴스":
         dataSend = {
             "version": "2.0",
             "template": {
@@ -99,7 +99,7 @@ def Message():
                 }
         }
 
-    if content == "취업정보":
+    elif content == "취업정보":
         dataSend = {
             "version": "2.0",
             "template": {
