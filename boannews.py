@@ -1,4 +1,4 @@
-from urllib import request
+from urllib import requests
 from bs4 import BeautifulSoup
 
 main_url = 'https://www.boannews.com/Default.asp'
