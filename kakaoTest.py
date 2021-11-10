@@ -55,7 +55,7 @@ def Message():
                         {
                           "action": "webLink",
                           "label": "구경하기",
-                          "webLinkUrl": boannews.news_title_1,
+                          "webLinkUrl": boannews.news_title_1
                         }
                       ]
                     },
@@ -68,7 +68,7 @@ def Message():
                         {
                           "action": "webLink",
                           "label": "구경하기",
-                          "webLinkUrl": boannews.news_title_2,
+                          "webLinkUrl": boannews.news_title_2
                         }
                       ]
                     },
@@ -81,7 +81,7 @@ def Message():
                         {
                           "action": "webLink",
                           "label": "구경하기",
-                          "webLinkUrl": boannews.news_title_3,
+                          "webLinkUrl": boannews.news_title_3
                         }
                       ]
                     },
@@ -94,7 +94,7 @@ def Message():
                         {
                           "action": "webLink",
                           "label": "구경하기",
-                          "webLinkUrl": boannews.news_title_4,
+                          "webLinkUrl": boannews.news_title_4
                         }
                       ]
                     },
@@ -107,7 +107,7 @@ def Message():
                         {
                           "action": "webLink",
                           "label": "구경하기",
-                          "webLinkUrl": boannews.news_title_5,
+                          "webLinkUrl": boannews.news_title_5
                         }
                       ]
                     },

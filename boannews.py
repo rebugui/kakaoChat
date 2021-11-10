@@ -34,3 +34,28 @@ news_link_5 = news_link_5.replace("location.href='","")
 news_link_5 = news_link_5.replace("';","")
 news_link_5 = "https://www.boannews.com/"+news_link_5
 news_title_5 = soup.find("li",{"onmouseover":"headline_news(5);"}).find("p").text
+
+news_img_1 = soup.find('div', id='headline0').find(class_='headline_big_img').get('style')
+news_img_1 = news_img_1.replace("background: #fff url(","")
+news_img_1 = news_img_1.replace(") center center no-repeat;background-size:cover;","")
+news_img_1 = "https://www.boannews.com/"+news_img_1
+
+news_img_2 = soup.find('div', id='headline0').find(class_='headline_big_img').get('style')
+news_img_2 = news_img_2.replace("background: #fff url(","")
+news_img_2 = news_img_2.replace(") center center no-repeat;background-size:cover;","")
+news_img_2 = "https://www.boannews.com/"+news_img_2
+
+news_img_3 = soup.find('div', id='headline0').find(class_='headline_big_img').get('style')
+news_img_3 = news_img_3.replace("background: #fff url(","")
+news_img_3 = news_img_3.replace(") center center no-repeat;background-size:cover;","")
+news_img_3 = "https://www.boannews.com/"+news_img_3
+
+news_img_4 = soup.find('div', id='headline0').find(class_='headline_big_img').get('style')
+news_img_4 = news_img_4.replace("background: #fff url(","")
+news_img_4 = news_img_4.replace(") center center no-repeat;background-size:cover;","")
+news_img_4 = "https://www.boannews.com/"+news_img_4
+
+news_img_5 = soup.find('div', id='headline0').find(class_='headline_big_img').get('style')
+news_img_5 = news_img_5.replace("background: #fff url(","")
+news_img_5 = news_img_5.replace(") center center no-repeat;background-size:cover;","")
+news_img_5 = "https://www.boannews.com/"+news_img_5
