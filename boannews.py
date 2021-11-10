@@ -1,12 +1,9 @@
-from urllib import requests
+import requests
 from bs4 import BeautifulSoup
 
 main_url = 'https://www.boannews.com/Default.asp'
 res = requests.get(main_url)
 soup = BeautifulSoup(res.content, 'lxml')
-
-
-print(soup)
 
 news_link_1 = soup.find("li",{"onmouseover":"headline_news(1);"}).get('onclick')
 news_link_1 = news_link_1.replace("location.href='","")
