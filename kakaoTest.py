@@ -1,7 +1,7 @@
 # server.py
 from flask import Flask, request, jsonify
-import sys
-#import boannews.Today_Main_Post
+import sys, boannews
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -50,20 +50,37 @@ def Message():
             "template": {
                 "outputs": [
                     {
-                        "carousel": {
-                            "type" : "basicCard",
-                            "items": [
+                        "contents": [
+                        {
+                          "type": "card.list",
+                          "cards": [
+                            {
+                              "listItems": [
                                 {
-                                    "title" : "보안뉴스",
-                                    "description" : "준비중 입니다."
-                                    #"description" : boannews.Today_Main_Post()
+                                    "type": "title",
+                                    "imageUrl": "https://www.boannews.com/pds/main/default_ci.gif",
+                                    "title": "주요 보안뉴스",
+                                    "linkUrl": {
+                                        "type": "OS",
+                                        "webUrl": "https://www.boannews.com/"
+                                    }
+                                },
+                                {
+                                    "type": "item",
+                                    "imageUrl": "https://i1.sndcdn.com/artworks-000193195536-fm8ibf-t500x500.jpg",
+                                    "title": boannews.news_title_1,
+                                    "linkUrl": boannews.news_link_1
                                 }
-                            ]
+                              ]
+                            }
+                          ]
                         }
+                      ]
                     }
                 ]
             }
         }
+
 
 
     if content == "취업정보":
