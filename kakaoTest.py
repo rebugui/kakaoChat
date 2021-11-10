@@ -4,12 +4,16 @@ import sys
 app = Flask(__name__)
 
 
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+
 @app.route('/info')
 def Keyboard():
     dataSend = {
     "Subject":"거북",
     "user":"거북"
-    "이상민":"멍청이"
     }
     return jsonify(dataSend)
 
@@ -86,4 +90,5 @@ def Message():
     return jsonify(dataSend)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0') # Flask 기본포트 5000번
+    app.run(host='0.0.0.0', port=5000, debug=True)
+~                                                     
