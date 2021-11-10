@@ -2,7 +2,7 @@ from urllib import request
 from bs4 import BeautifulSoup
 
 main_url = 'https://www.boannews.com/Default.asp'
-res = request.get(main_url)
+res = requests.get(main_url)
 soup = BeautifulSoup(res.content, 'lxml')
 
 
