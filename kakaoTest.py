@@ -19,7 +19,6 @@ def Keyboard():
 
 @app.route('/message', methods=['POST'])
 def Message():
-
     content = request.get_json()
     content = content['userRequest']
     content = content['utterance']
@@ -46,57 +45,51 @@ def Message():
 
     elif content == "보안뉴스":
         dataSend = {
-            "version": "2.0",
-            "template": {
-                "outputs": [
+          "version": "2.0",
+          "template": {
+            "outputs": [
+              {
+                "listCard": {
+                  "header": {
+                    "title": "카카오 i 디벨로퍼스를 소개합니다"
+                  },
+                  "items": [
                     {
-                        "carousel": {
-                            "type": "card.list",
-                            "cards": [
-                            {
-                                "listItems": [
-                                  {
-                                      "type": "title",
-                                      "imageUrl": "https://1.bp.blogspot.com/-fHIwHKuBJCM/UfM2WqCDPqI/AAAAAAAABt0/UTK6-Ko3np4/w1200-h630-p-k-no-nu/J.Fla.jpg",
-                                      "title": "Jfla",
-                                      "linkUrl": {
-                                        "type": "OS",
-                                          "webUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "moUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "pcUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "pcCustomScheme": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "macCustomScheme": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "iosUrl": "melonios://",
-                                          "iosStoreUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "androidUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "androidStoreUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264"
-                                      }
-                                  },
-                                  {
-                                      "type": "item",
-                                      "imageUrl": "https://i1.sndcdn.com/artworks-000193195536-fm8ibf-t500x500.jpg",
-                                      "title": "Shape of you",
-                                      "description": "Ed Sheeran",
-                                      "linkUrl": {
-                                        "type": "OS",
-                                          "webUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "moUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "pcUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "pcCustomScheme": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "macCustomScheme": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "iosUrl": "melonios://",
-                                          "iosStoreUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "androidUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
-                                          "androidStoreUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264"
-                                        }
-                                    }
-                                ]
-                            }
-                            ]
-                        }
+                      "title": "Kakao i Developers",
+                      "description": "새로운 AI의 내일과 일상의 변화",
+                      "imageUrl": "http://k.kakaocdn.net/dn/APR96/btqqH7zLanY/kD5mIPX7TdD2NAxgP29cC0/1x1.jpg",
+                      "link": {
+                        "web": "https://namu.wiki/w/%EB%9D%BC%EC%9D%B4%EC%96%B8(%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88)"
+                      }
+                    },
+                    {
+                      "title": "Kakao i Open Builder",
+                      "description": "카카오톡 채널 챗봇 만들기",
+                      "imageUrl": "http://k.kakaocdn.net/dn/N4Epz/btqqHCfF5II/a3kMRckYml1NLPEo7nqTmK/1x1.jpg",
+                      "link": {
+                        "web": "https://namu.wiki/w/%EB%AC%B4%EC%A7%80(%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88)"
+                      }
+                    },
+                    {
+                      "title": "Kakao i Voice Service",
+                      "description": "보이스봇 / KVS 제휴 신청하기",
+                      "imageUrl": "http://k.kakaocdn.net/dn/bE8AKO/btqqFHI6vDQ/mWZGNbLIOlTv3oVF1gzXKK/1x1.jpg",
+                      "link": {
+                        "web": "https://namu.wiki/w/%EC%96%B4%ED%94%BC%EC%B9%98"
+                      }
                     }
-                ]
+                  ],
+                  "buttons": [
+                    {
+                      "label": "구경가기",
+                      "action": "webLink",
+                      "webLinkUrl": "https://namu.wiki/w/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88"
+                    }
+                  ]
                 }
+              }
+            ]
+          }
         }
 
     elif content == "취업정보":
