@@ -50,37 +50,54 @@ def Message():
             "template": {
                 "outputs": [
                     {
-                        "carousel": 
-                        {
-                          "type": "card.list",
-                          "cards": [
+                        "carousel": {
+                            "type": "card.list",
+                            "cards": [
                             {
-                              "listItems": [
-                                {
-                                    "type": "title",
-                                    "imageUrl": "https://www.boannews.com/pds/main/default_ci.gif",
-                                    "title": "주요 보안뉴스",
-                                    "linkUrl": {
+                                "listItems": [
+                                  {
+                                      "type": "title",
+                                      "imageUrl": "https://1.bp.blogspot.com/-fHIwHKuBJCM/UfM2WqCDPqI/AAAAAAAABt0/UTK6-Ko3np4/w1200-h630-p-k-no-nu/J.Fla.jpg",
+                                      "title": "Jfla",
+                                      "linkUrl": {
                                         "type": "OS",
-                                        "webUrl": "https://www.boannews.com/"
+                                          "webUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "moUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "pcUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "pcCustomScheme": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "macCustomScheme": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "iosUrl": "melonios://",
+                                          "iosStoreUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "androidUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "androidStoreUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264"
+                                      }
+                                  },
+                                  {
+                                      "type": "item",
+                                      "imageUrl": "https://i1.sndcdn.com/artworks-000193195536-fm8ibf-t500x500.jpg",
+                                      "title": "Shape of you",
+                                      "description": "Ed Sheeran",
+                                      "linkUrl": {
+                                        "type": "OS",
+                                          "webUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "moUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "pcUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "pcCustomScheme": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "macCustomScheme": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "iosUrl": "melonios://",
+                                          "iosStoreUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "androidUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264",
+                                          "androidStoreUrl": "http://www.melon.com/artist/timeline.htm?artistId=729264"
+                                        }
                                     }
-                                },
-                                {
-                                    "type": "item",
-                                    "imageUrl": "https://i1.sndcdn.com/artworks-000193195536-fm8ibf-t500x500.jpg",
-                                    "title": boannews.news_title_1,
-                                    "linkUrl": boannews.news_link_1
-                                }
-                              ]
+                                ]
                             }
-                          ]
+                            ]
                         }
                     }
                 ]
-            }
+                }
         }
-
-
 
     if content == "취업정보":
         dataSend = {
