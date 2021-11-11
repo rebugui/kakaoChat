@@ -18,18 +18,23 @@ def Keyboard():
     return jsonify(dataSend)
 
 @app.route('/test', methods=['POST'])
-def test():{
-  "version": "2.0",
-  "template": {
-    "outputs": [
-      {
-        "simpleText": {
-          "text": "멍청아"
+def test():
+  content = request.get_json()
+  content = content['userRequest']
+  content = content['utterance']
+  
+  dataSend = {
+    "version": "2.0",
+    "template": {
+      "outputs": [
+        {
+          "simpleText": {
+            "text": "멍청아"
+          }
         }
-      }
-    ]
+      ]
+    }
   }
-}
 
 
 @app.route('/boannews_print', methods=['POST'])
