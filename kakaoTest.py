@@ -17,27 +17,28 @@ def Keyboard():
     }
     return jsonify(dataSend)
 
-@app.route('/message', methods=['POST'])
-def Message():
+@app.route('/test', methods=['POST'])
+def test():{
+  "version": "2.0",
+  "template": {
+    "outputs": [
+      {
+        "simpleText": {
+          "text": "멍청아"
+        }
+      }
+    ]
+  }
+}
+
+
+@app.route('/boannews', methods=['POST'])
+def boannews():
     content = request.get_json()
     content = content['userRequest']
     content = content['utterance']
 
-    if content == "안녕":
-        dataSend = {
-            "version": "2.0",
-            "template": {
-              "outputs": [
-                {
-                  "simpleText": {
-                    "text": "간단한 텍스트 요소입니다."
-                  }
-                }
-              ]
-            }
-        }
-
-    elif content == "보안뉴스":
+    if content == "보안뉴스":
         dataSend = {
           "version": "2.0",
           "template": {
@@ -118,7 +119,7 @@ def Message():
           }
           
         }
-
+    
     return jsonify(dataSend)
 
 if __name__ == "__main__":
