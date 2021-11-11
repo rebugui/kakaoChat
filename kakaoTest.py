@@ -32,8 +32,8 @@ def test():{
 }
 
 
-@app.route('/boannews', methods=['POST'])
-def boannews():
+@app.route('/boannews_print', methods=['POST'])
+def boannews_print():
     content = request.get_json()
     content = content['userRequest']
     content = content['utterance']
