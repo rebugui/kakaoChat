@@ -48,6 +48,19 @@ def boannews():
                   "type": "basicCard",
                   "items": [
                     {
+                      "title": boannews.news_title_[0],
+                      "thumbnail": {
+                        "imageUrl": boannews.news_img_[0]
+                      },
+                      "buttons": [
+                        {
+                          "action": "webLink",
+                          "label": "구경하기",
+                          "webLinkUrl": boannews.news_link_[0]
+                        }
+                      ]
+                    },
+                    {
                       "title": boannews.news_title_[1],
                       "thumbnail": {
                         "imageUrl": boannews.news_img_[1]
@@ -96,19 +109,6 @@ def boannews():
                           "action": "webLink",
                           "label": "구경하기",
                           "webLinkUrl": boannews.news_link_[4]
-                        }
-                      ]
-                    },
-                    {
-                      "title": boannews.news_title_[5],
-                      "thumbnail": {
-                        "imageUrl": boannews.news_img_[5]
-                      },
-                      "buttons": [
-                        {
-                          "action": "webLink",
-                          "label": "구경하기",
-                          "webLinkUrl": boannews.news_link_[5]
                         }
                       ]
                     },
