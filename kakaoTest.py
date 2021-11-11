@@ -35,7 +35,7 @@ def test():
       ]
     }
   }
-
+  return jsonify(dataSend)
 
 @app.route('/boannews_print', methods=['POST'])
 def boannews_print():
