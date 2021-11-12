@@ -133,20 +133,53 @@ def saramin_print():
       "template": {
         "outputs": [
           {
-            "carousel": {
-              "type": "basicCard",
+            "listCard": {
+              "header": {
+                "title": "사람인 보안직무 채용 공고"
+              },
               "items": [
-                { 
+                {
                   "title": saramin.company_t[1],
                   "description": saramin.title_t[1],
-                  "buttons": [
-                    {
-                      "action": "webLink",
-                      "label": "채용 공고",
-                      "webLinkUrl": saramin.link_t[1]
-                    }
-                  ]
+                  "link": {
+                    "web": saramin.link_t[1]
+                  }
                 },
+                {
+                  "title": saramin.company_t[2],
+                  "description": saramin.title_t[2],
+                  "link": {
+                    "web": saramin.link_t[2]
+                  }
+                },
+                {
+                  "title": saramin.company_t[3],
+                  "description": saramin.title_t[3],
+                  "link": {
+                    "web": saramin.link_t[3]
+                  }
+                },
+                {
+                  "title": saramin.company_t[4],
+                  "description": saramin.title_t[4],
+                  "link": {
+                    "web": saramin.link_t[4]
+                  }
+                },
+                {
+                  "title": saramin.company_t[5],
+                  "description": saramin.title_t[5],
+                  "link": {
+                    "web": saramin.link_t[5]
+                  }
+                },
+                {
+                  "title": saramin.company_t[6],
+                  "description": saramin.title_t[6],
+                  "link": {
+                    "web": saramin.link_t[6]
+                  }
+                }
               ]
             }
           }
