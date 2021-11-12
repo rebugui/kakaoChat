@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
-import pandas as pd
 
 # 데이터를 받을 리스트
 title_t = []
@@ -14,6 +13,7 @@ request = Request(url, headers=headers)
 response = urlopen(request)
 html = response.read()
 soup = BeautifulSoup(html, 'html.parser')
+
 # 제목
 title = soup.select('#recruit_info_list > div.content > div > div.area_job > h2 > a > span')
 for t in title:
