@@ -7,7 +7,7 @@ company_t = []
 link_t = []
 
 # 정보보호 직무 크롤링
-url = 'https://www.saramin.co.kr/zf_user/search/recruit?searchword=%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88&go=&flag=n&searchMode=1&searchType=search&search_done=y&search_optional_item=n&recruitPage=' + str(i) + '&recruitSort=relation&recruitPageCount=40&inner_com_type=&company_cd=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C9%2C10&quick_apply=&except_read='
+url = 'https://www.saramin.co.kr/zf_user/search/recruit?searchword=%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88&go=&flag=n&searchMode=1&searchType=search&search_done=y&search_optional_item=n&recruitPage=1&recruitSort=relation&recruitPageCount=40&inner_com_type=&company_cd=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C9%2C10&quick_apply=&except_read='
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
 request = Request(url, headers=headers)
 response = urlopen(request)
