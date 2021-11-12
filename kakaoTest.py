@@ -1,6 +1,6 @@
 # server.py
 from flask import Flask, request, jsonify
-import sys, boannews
+import sys, boannews, saramin
 
 app = Flask(__name__)
 
@@ -122,8 +122,41 @@ def boannews_print():
       }
     }
     return jsonify(dataSend)
-    
-    
+
+@app.route('/saramin_print', methods=['POST'])
+def saramin_print():
+    content = request.get_json()
+    content = content['userRequest']
+    content = content['utterance']
+    dataSend = {
+      "version": "2.0",
+      "template": {
+        "outputs": [
+          {
+            "carousel": {
+              "type": "basicCard",
+              "items": [
+                {
+                  "title": saramin.company_t[1],
+                  "description": saramin.title_t[1],
+                },
+                {
+                  "buttons": [
+                    {
+                      "action": "webLink",
+                      "label": "채용 공고",
+                      "webLinkUrl": saramin.link_t[1]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+    return jsonify(dataSend)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)                      
