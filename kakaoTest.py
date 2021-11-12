@@ -136,16 +136,14 @@ def saramin_print():
             "carousel": {
               "type": "basicCard",
               "items": [
-                {
+                { 
                   "title": saramin.company_t[1],
                   "description": saramin.title_t[1],
-                },
-                {
                   "buttons": [
                     {
                       "action": "webLink",
                       "label": "채용 공고",
-                      "webLinkUrl": saramin.link_t[1],
+                      "webLinkUrl": saramin.link_t[1]
                     }
                   ]
                 },
