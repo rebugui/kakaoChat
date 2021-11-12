@@ -145,10 +145,10 @@ def saramin_print():
                     {
                       "action": "webLink",
                       "label": "채용 공고",
-                      "webLinkUrl": saramin.link_t[1]
+                      "webLinkUrl": saramin.link_t[1],
                     }
                   ]
-                }
+                },
               ]
             }
           }
