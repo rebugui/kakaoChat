@@ -254,30 +254,45 @@ def saramin_security_list():
     return jsonify(dataSend)
 
 @app.route('/WS_calendar', methods=['POST'])
-def ws_calendar_():
+def ws_calendar():
     content = request.get_json()
     content = content['userRequest']
     content = content['utterance']
     dataSend = {
-      "version": "2.0",
-      "template": {
-        "outputs": [
-          {
-            "listCard": {
-              "header": {
-                "title": "학사 일정"
-              },
-              "items": [
-                {
-                  "title": WS_calendar.day_t,
-                  "description": WS_calendar.date_t,
+        "version": "2.0",
+        "template": {
+          "outputs": [
+            {
+              "listCard": {
+                "header": {
+                  "title": "학사 일정"
                 }
-              ]
+              }
             }
-          }
-        ]
-      }
+          ]
+        }
     }
+    for i in range(WS_calendar.day_t):
+      dataSend = {
+        "version": "2.0",
+        "template": {
+          "outputs": [
+            {
+              "listCard": {
+                "header": {
+                  "title": "학사 일정"
+                },
+                "items": [
+                  {
+                    "title": WS_calendar.day[i],
+                    "description": WS_calendar.date_t[i],
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
     return jsonify(dataSend)
 
 if __name__ == "__main__":
