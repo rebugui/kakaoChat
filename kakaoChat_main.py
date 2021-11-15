@@ -269,8 +269,8 @@ def ws_calendar():
               },
               "items": [
                 {
-                  "title": WS_calendar.day_t[t],
-                  "description": WS_calendar.date_t[t],
+                  "title": WS_calendar.day_t[0],
+                  "description": WS_calendar.date_t[0],
                 }
               ]
             }
