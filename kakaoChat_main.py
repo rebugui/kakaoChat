@@ -258,7 +258,7 @@ def ws_calendar():
     content = request.get_json()
     content = content['userRequest']
     content = content['utterance']
-    for t in range(WS_calendar.day):
+    for t in range(WS_calendar.day_t):
       dataSend = {
         "version": "2.0",
         "template": {
