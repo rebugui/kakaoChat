@@ -245,14 +245,7 @@ def saramin_security_list():
                     "web": saramin_security.link_t[6]
                   }
                 }
-              ]
-            }
-          },
-          {
-            "listCard": {
-              "header": {
-                "title": "사람인 보안직무 채용 공고"
-              },
+              ],
               "items": [
                 {
                   "title": saramin_security.company_t[1],
@@ -305,7 +298,7 @@ def saramin_security_list():
     return jsonify(dataSend)
 
 @app.route('/WS_calendar', methods=['POST'])
-def ws_calendar():
+def ws_calendar_():
     content = request.get_json()
     content = content['userRequest']
     content = content['utterance']
@@ -324,8 +317,8 @@ def ws_calendar():
                   "description": WS_calendar.date_t[0],
                 },                
                 {
-                  "title": saramin_it.company_t[1],
-                  "description": saramin_it.title_t[1],
+                  "title": WS_calendar.day_t[1],
+                  "description": WS_calendar.date_t[1],
                 }
               ]
             }
