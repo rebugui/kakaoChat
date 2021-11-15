@@ -272,7 +272,7 @@ def ws_calendar():
           ]
         }
     }
-    for i in range(WS_calendar.day_t):
+    for t in range(WS_calendar.day):
       dataSend = {
         "version": "2.0",
         "template": {
@@ -284,8 +284,8 @@ def ws_calendar():
                 },
                 "items": [
                   {
-                    "title": WS_calendar.day[i],
-                    "description": WS_calendar.date_t[i],
+                    "title": WS_calendar.day_t[t],
+                    "description": WS_calendar.date_t[t],
                   }
                 ]
               }
