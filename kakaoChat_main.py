@@ -258,28 +258,27 @@ def ws_calendar():
     content = request.get_json()
     content = content['userRequest']
     content = content['utterance']
-    for t in len(WS_calendar.day_t):
-      dataSend = {
-        "version": "2.0",
-        "template": {
-          "outputs": [
-            {
-              "listCard": {
-                "header": {
-                  "title": "학사 일정"
-                },
-                "items": [
-                  {
-                    "title": WS_calendar.day_t[t],
-                    "description": WS_calendar.date_t[t],
-                  }
-                ]
-              }
+    dataSend = {
+      "version": "2.0",
+      "template": {
+        "outputs": [
+          {
+            "listCard": {
+              "header": {
+                "title": "학사 일정"
+              },
+              "items": [
+                {
+                  "title": WS_calendar.day_t[t],
+                  "description": WS_calendar.date_t[t],
+                }
+              ]
             }
-          ]
-        }
+          }
+        ]
       }
-      return jsonify(dataSend)
+    }
+    return jsonify(dataSend)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)                      
