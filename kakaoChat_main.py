@@ -258,20 +258,6 @@ def ws_calendar():
     content = request.get_json()
     content = content['userRequest']
     content = content['utterance']
-    dataSend = {
-        "version": "2.0",
-        "template": {
-          "outputs": [
-            {
-              "listCard": {
-                "header": {
-                  "title": "학사 일정"
-                }
-              }
-            }
-          ]
-        }
-    }
     for t in range(WS_calendar.day):
       dataSend = {
         "version": "2.0",
