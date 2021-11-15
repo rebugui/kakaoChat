@@ -245,50 +245,6 @@ def saramin_security_list():
                     "web": saramin_security.link_t[6]
                   }
                 }
-              ],
-              "items": [
-                {
-                  "title": saramin_security.company_t[1],
-                  "description": saramin_security.title_t[1],
-                  "link": {
-                    "web": saramin_security.link_t[1]
-                  }
-                },
-                {
-                  "title": saramin_security.company_t[2],
-                  "description": saramin_security.title_t[2],
-                  "link": {
-                    "web": saramin_security.link_t[2]
-                  }
-                },
-                {
-                  "title": saramin_security.company_t[3],
-                  "description": saramin_security.title_t[3],
-                  "link": {
-                    "web": saramin_security.link_t[3]
-                  }
-                },
-                {
-                  "title": saramin_security.company_t[4],
-                  "description": saramin_security.title_t[4],
-                  "link": {
-                    "web": saramin_security.link_t[4]
-                  }
-                },
-                {
-                  "title": saramin_security.company_t[5],
-                  "description": saramin_security.title_t[5],
-                  "link": {
-                    "web": saramin_security.link_t[5]
-                  }
-                },
-                {
-                  "title": saramin_security.company_t[6],
-                  "description": saramin_security.title_t[6],
-                  "link": {
-                    "web": saramin_security.link_t[6]
-                  }
-                }
               ]
             }
           }
@@ -313,12 +269,8 @@ def ws_calendar_():
               },
               "items": [
                 {
-                  "title": WS_calendar.day_t[0],
-                  "description": WS_calendar.date_t[0],
-                },                
-                {
-                  "title": WS_calendar.day_t[1],
-                  "description": WS_calendar.date_t[1],
+                  "title": WS_calendar.day_t,
+                  "description": WS_calendar.date_t,
                 }
               ]
             }
