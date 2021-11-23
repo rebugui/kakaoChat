@@ -83,31 +83,21 @@ def saramin_it_list():
         {
           "carousel": {
             "type": "listCard",
-            "items": [
-              {
-                "header": {
-                  "title": "IT개발·데이터 채용 공고(1)"
-                },
-                "items": []
-              },
-              {
-                "header": {
-                  "title": "IT개발·데이터 채용 공고(2)"
-                },
-                "items": []
-              },
-              {
-                "header": {
-                  "title": "IT개발·데이터 채용 공고(3)"
-                },
-                "items": []
-              }              
-            ]
+            "items": []
           }
         }
       ]
     }
   }
+  for i in range(3):
+    dataSend['template']['outputs'][0]['carousel']['items'].append(
+      {
+        "header": {
+          "title": "IT개발·데이터 채용 공고(%d)"%i
+        },
+        "items": []
+      }       
+    )
   for i in range(0,5):
       dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
           {
@@ -152,41 +142,31 @@ def saramin_security_list():
         {
           "carousel": {
             "type": "listCard",
-            "items": [
-              {
-                "header": {
-                  "title": "보안직무 채용 공고(1)"
-                },
-                "items": []
-              },
-              {
-                "header": {
-                  "title": "보안직무 채용 공고(2)"
-                },
-                "items": []
-              },
-              {
-                "header": {
-                  "title": "보안직무 채용 공고(3)"
-                },
-                "items": []
-              }              
-            ]
+            "items": []
           }
         }
       ]
     }
   }
+  for i in range(3):
+    dataSend['template']['outputs'][0]['carousel']['items'].append(
+      {
+        "header": {
+          "title": "보안직무 채용 공고(%d)"%i
+        },
+        "items": []
+      }       
+    )
   for i in range(0,5):
-      dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
-          {
-              "title": saramin_security.company_t[i],
-              "description": saramin_security.title_t[i],
-              "link": {
-                "web": saramin_security.link_t[i]
-                  }
-          }
-      ) 
+    dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
+        {
+            "title": saramin_security.company_t[i],
+            "description": saramin_security.title_t[i],
+            "link": {
+              "web": saramin_security.link_t[i]
+                }
+        }
+    ) 
   for i in range(5,10):
       dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
           {
@@ -254,22 +234,22 @@ def ws_calendar():
     for i in range(10,len(WS_calendar.date_t)): 
       dataSend['template']['outputs'][0]['carousel']['items'][2]['items'].append(
         {
-          "title": WS_calendar.day_t[i],
-          "description": WS_calendar.date_t[i],
+          "title": WS_calendar.date_t[i],
+          "description": WS_calendar.day_t[i],
         }
       )
     for i in range(5,10): 
       dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
         {
-          "title": WS_calendar.day_t[i],
-          "description": WS_calendar.date_t[i],
+          "title": WS_calendar.date_t[i],
+          "description": WS_calendar.day_t[i],
         }
       )
     for i in range(0,5): 
       dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
         {
-          "title": WS_calendar.day_t[i],
-          "description": WS_calendar.date_t[i],
+          "title": WS_calendar.date_t[i],
+          "description": WS_calendar.day_t[i],
         }
       )  
 
@@ -285,15 +265,15 @@ def ws_calendar():
     for i in range(0,5): 
       dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
         {
-          "title": WS_calendar.day_t[i],
-          "description": WS_calendar.date_t[i],
+          "title": WS_calendar.date_t[i],
+          "description": WS_calendar.day_t[i],
         }
       )
     for i in range(5,10): 
       dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
         {
-          "title": WS_calendar.day_t[i],
-          "description": WS_calendar.date_t[i],
+          "title": WS_calendar.date_t[i],
+          "description": WS_calendar.day_t[i],
         }
       )
 
@@ -301,8 +281,8 @@ def ws_calendar():
       for i in range(0,len(WS_calendar.date_t)): 
         dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
           {
-            "title": WS_calendar.day_t[i],
-            "description": WS_calendar.date_t[i],
+            "title": WS_calendar.date_t[i],
+            "description": WS_calendar.day_t[i],
           }
         )
   return jsonify(dataSend)
