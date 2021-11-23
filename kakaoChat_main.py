@@ -273,14 +273,13 @@ def ws_calendar():
         ]
       }
     }
-    for i in range(len(WS_calendar.day_t)): {
+    for i in range(len(WS_calendar.day_t)): 
       dataSend['template']['outputs'][0]['listCard']['items'].append(
           {
           "title": WS_calendar.day_t[i],
           "description": WS_calendar.date_t[i],
           }
       )
-    }
     return jsonify(dataSend)
 
 if __name__ == "__main__":
