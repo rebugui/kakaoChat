@@ -272,11 +272,11 @@ def ws_calendar():
       ]
     }
   }
-  for i in WS_calendar.get_calendar(): 
+  for i in range(WS_calendar.calender_len): 
     dataSend['template']['outputs'][0]['listCard']['items'].append(
       {
-        "title": i[0],
-        "description": i[1],
+        "title": WS_calendar.day_t[i],
+        "description": WS_calendar.date_t[i],
       }
     )
   return jsonify(dataSend)
