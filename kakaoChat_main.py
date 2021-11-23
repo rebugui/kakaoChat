@@ -55,7 +55,7 @@ def boannews_print():
     }
   }
   for i in range(5):
-    dataSend['template']['outputs'][0]['carousel']['items'][i].append(
+    dataSend['template']['outputs'][0]['carousel']['items'].append(
     {
       "title": boannews.news_title_[i],
       "thumbnail": {
