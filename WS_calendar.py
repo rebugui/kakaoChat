@@ -15,5 +15,3 @@ for t in date:
 day = soup.select('#month_iljung > dl > dd.day_info > span')
 for t in day:
     day_t.append(t.text)
-
-calender_len = len(date_t)
