@@ -234,7 +234,7 @@ def ws_calendar():
       ]
     }    
   }
-  if len(WS_calendar.date_t > 10):
+  if len(WS_calendar.date_t) > 10:
     dataSend['template']['outputs'][0]['carousel']['items'].append(
       {
         "header": {
@@ -273,7 +273,7 @@ def ws_calendar():
         }
       )  
 
-  elif len(WS_calendar.date_t > 5):
+  elif len(WS_calendar.date_t) > 5:
     dataSend['template']['outputs'][0]['carousel']['items'].append(
       {
         "header": {
