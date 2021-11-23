@@ -81,52 +81,20 @@ def saramin_it_list():
     "template": {
       "outputs": [
         {
-          "listCard": {
-            "header": {
-              "title": "사람인 IT개발·데이터 채용 공고"
-            },
+          "carousel": {
+            "type": "listCard",
             "items": [
               {
-                "title": saramin_it.company_t[1],
-                "description": saramin_it.title_t[1],
-                "link": {
-                  "web": saramin_it.link_t[1]
-                }
+                "header": {
+                  "title": "사람인 IT개발·데이터 채용 공고1"
+                },
+                "items": []
               },
               {
-                "title": saramin_it.company_t[2],
-                "description": saramin_it.title_t[2],
-                "link": {
-                  "web": saramin_it.link_t[2]
-                }
-              },
-              {
-                "title": saramin_it.company_t[3],
-                "description": saramin_it.title_t[3],
-                "link": {
-                  "web": saramin_it.link_t[3]
-                }
-              },
-              {
-                "title": saramin_it.company_t[4],
-                "description": saramin_it.title_t[4],
-                "link": {
-                  "web": saramin_it.link_t[4]
-                }
-              },
-              {
-                "title": saramin_it.company_t[5],
-                "description": saramin_it.title_t[5],
-                "link": {
-                  "web": saramin_it.link_t[5]
-                }
-              },
-              {
-                "title": saramin_it.company_t[6],
-                "description": saramin_it.title_t[6],
-                "link": {
-                  "web": saramin_it.link_t[6]
-                }
+                "header": {
+                  "title": "사람인 IT개발·데이터 채용 공고2"
+                },
+                "items": []
               }
             ]
           }
@@ -134,6 +102,27 @@ def saramin_it_list():
       ]
     }
   }
+  for i in range(0,5):
+      dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].appnend(
+          {
+              "title": saramin_it.company_t[i],
+              "description": saramin_it.title_t[i],
+              "link": {
+                "web": saramin_it.link_t[i]
+                  }
+          }
+      ) 
+
+  for i in range(5,10):
+      dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].appnend(
+          {
+              "title": saramin_it.company_t[i],
+              "description": saramin_it.title_t[i],
+              "link": {
+                "web": saramin_it.link_t[i]
+                  }
+          }
+      )
   return jsonify(dataSend)
 
 @app.route('/saramin_security_list', methods=['POST'])
