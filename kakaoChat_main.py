@@ -22,14 +22,13 @@ def test():
   content = request.get_json()
   content = content['userRequest']
   content = content['utterance']
-  
   dataSend = {
     "version": "2.0",
     "template": {
       "outputs": [
         {
           "simpleText": {
-            "text": "멍청이"
+            "text": WS_calendar.day_t[0]
           }
         }
       ]
@@ -259,7 +258,7 @@ def ws_calendar():
   content = content['userRequest']
   content = content['utterance']
   dataSend = {
-    "version": "2.1",
+    "version": "2.0",
     "template": {
       "outputs": [
         {
