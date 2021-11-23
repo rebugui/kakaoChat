@@ -267,13 +267,14 @@ def ws_calendar():
               "header": {
                 "title": "학사 일정"
               },
+              "items": []
             }
           }
         ]
       }
     }
     for i in range(len(WS_calendar.day_t)): {
-      dataSend['template']['outputs'][0]['listCard']['items'][0].append(                
+      dataSend['template']['outputs'][0]['listCard']['items'].append(                
           {
           "title": WS_calendar.day_t[i],
           "description": WS_calendar.date_t[i],
@@ -283,4 +284,4 @@ def ws_calendar():
     return jsonify(dataSend)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)                      
+    app.run(host='0.0.0.0', port=5000, debug=True)
