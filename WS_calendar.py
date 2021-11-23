@@ -2,7 +2,7 @@ import requests, ssl
 from bs4 import BeautifulSoup
 ssl._create_default_https_context = ssl._create_unverified_context
 
-main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?mzcode=K00M0409&gubun=UN'
+main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=2021&ymonth=12&mzcode=K00M0409&gubun=UN'
 res = requests.get(main_url,verify=False)
 soup = BeautifulSoup(res.content, 'lxml')
 date_t = []

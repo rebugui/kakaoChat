@@ -267,16 +267,18 @@ def ws_calendar():
               "header": {
                 "title": "학사 일정"
               },
-              "items": [
-                {
-                  "title": WS_calendar.day_t[0],
-                  "description": WS_calendar.date_t[0],
-                }
-              ]
             }
           }
         ]
       }
+    }
+    for i in range(WS_calendar.day_t): {
+      dataSend['template']['ountput'][0]['listCard']['items'].append(                
+          {
+          "title": WS_calendar.day_t[i],
+          "description": WS_calendar.date_t[i],
+          }
+      )
     }
     return jsonify(dataSend)
 
