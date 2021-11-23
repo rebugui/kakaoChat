@@ -236,20 +236,20 @@ def ws_calendar():
       ]
     }    
   }
-  for i in range(10): 
+  for i in range(0,5): 
     dataSend['template']['outputs'][0]['carousel']['items'][0]['itemList'].append(
       {
         "title": WS_calendar.day_t[i],
         "description": WS_calendar.date_t[i],
       }
     )
-  #for i in range(10,20): 
-  #  dataSend['template']['outputs'][0]['carousel']['items'][1]['itemList'].append(
-  #    {
-  #      "title": WS_calendar.day_t[i],
-  #      "description": WS_calendar.date_t[i],
-  #    }
-  #  )
+  for i in range(5,10): 
+    dataSend['template']['outputs'][0]['carousel']['items'][1]['itemList'].append(
+      {
+        "title": WS_calendar.day_t[i],
+        "description": WS_calendar.date_t[i],
+      }
+    )
   return jsonify(dataSend)
 
 if __name__ == "__main__":
