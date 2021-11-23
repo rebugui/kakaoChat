@@ -278,7 +278,7 @@ def ws_calendar():
           {
           "title": WS_calendar.day_t[i],
           "description": WS_calendar.date_t[i],
-          }
+          },
       )
     }
     return jsonify(dataSend)
