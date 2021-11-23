@@ -273,15 +273,14 @@ def ws_calendar():
     }
   }
   if len(WS_calendar.date_t) <= 10:
-    for i in range(len(WS_calendar.date_t)): 
+    for i in range(WS_calendar.calender_len): 
       dataSend['template']['outputs'][0]['itemCard']['items'].append(
         {
           "title": WS_calendar.day_t[i],
           "description": WS_calendar.date_t[i],
         }
       )
-
-  elif len(WS_calendar.date_t) > 10 :
+  elif WS_calendar.calender_len > 10:
     for i in range(10): 
       dataSend['template']['outputs'][0]['itemCard']['items'].append(
         {
