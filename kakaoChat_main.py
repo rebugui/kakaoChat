@@ -262,18 +262,18 @@ def ws_calendar():
     "template": {
       "outputs": [
         {
-          "itemcard": {
-            "head": {
+          "listCard": {
+            "header": {
               "title": "학사 일정"
             },
-            "itemList": []
+            "items": []
           }
         }
       ]
     }
   }
-  for i in range(20): 
-    dataSend['template']['outputs'][0]['itemcard']['itemList'].append(
+  for i in range(5): 
+    dataSend['template']['outputs'][0]['listCard']['items'].append(
       {
         "title": WS_calendar.day_t[i],
         "description": WS_calendar.date_t[i],
