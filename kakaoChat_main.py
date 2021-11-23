@@ -272,7 +272,7 @@ def ws_calendar():
       ]
     }
   }
-  for i in range(WS_calendar.calender_len): 
+  for i in range(2): 
     dataSend['template']['outputs'][0]['listCard']['items'].append(
       {
         "title": WS_calendar.day_t[i],
