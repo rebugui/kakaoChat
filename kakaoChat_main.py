@@ -103,7 +103,7 @@ def saramin_it_list():
     }
   }
   for i in range(0,5):
-      dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].appnend(
+      dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
           {
               "title": saramin_it.company_t[i],
               "description": saramin_it.title_t[i],
@@ -114,7 +114,7 @@ def saramin_it_list():
       ) 
 
   for i in range(5,10):
-      dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].appnend(
+      dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
           {
               "title": saramin_it.company_t[i],
               "description": saramin_it.title_t[i],
