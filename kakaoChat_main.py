@@ -220,16 +220,26 @@ def ws_calendar():
       "outputs": [
         {
           "carousel": {
-              "type": "itemCard",
+              "type": "listCard",
               "items": [
-                  {
-                      "title": "학사일정",
-                      "itemList": []
+                {
+                  "header": {
+                    "title": "학사일정"
                   },
-                  {
-                      "title": "학사일정",
-                      "itemList": []
-                  }
+                  "items": []
+                },
+                {
+                  "header": {
+                    "title": "학사일정"
+                  },
+                  "items": []
+                },
+                {
+                  "header": {
+                    "title": "학사일정"
+                  },
+                  "items": []
+                }
               ]
           }    
         }
@@ -237,19 +247,26 @@ def ws_calendar():
     }    
   }
   for i in range(0,5): 
-    dataSend['template']['outputs'][0]['carousel']['items'][0]['itemList'].append(
+    dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
       {
         "title": WS_calendar.day_t[i],
         "description": WS_calendar.date_t[i],
       }
     )
   for i in range(5,10): 
-    dataSend['template']['outputs'][0]['carousel']['items'][1]['itemList'].append(
+    dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
       {
         "title": WS_calendar.day_t[i],
         "description": WS_calendar.date_t[i],
       }
     )
+  for i in range(10,15): 
+    dataSend['template']['outputs'][0]['carousel']['items'][2]['items'].append(
+      {
+        "title": WS_calendar.day_t[i],
+        "description": WS_calendar.date_t[i],
+      }
+    )    
   return jsonify(dataSend)
 
 if __name__ == "__main__":
