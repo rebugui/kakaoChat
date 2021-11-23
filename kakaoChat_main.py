@@ -48,78 +48,27 @@ def boannews_print():
         {
           "carousel": {
             "type": "basicCard",
-            "items": [
-              {
-                "title": boannews.news_title_[0],
-                "thumbnail": {
-                  "imageUrl": boannews.news_img_[0]
-                },
-                "buttons": [
-                  {
-                    "action": "webLink",
-                    "label": "구경하기",
-                    "webLinkUrl": boannews.news_link_[0]
-                  }
-                ]
-              },
-              {
-                "title": boannews.news_title_[1],
-                "thumbnail": {
-                  "imageUrl": boannews.news_img_[1]
-                },
-                "buttons": [
-                  {
-                    "action": "webLink",
-                    "label": "구경하기",
-                    "webLinkUrl": boannews.news_link_[1]
-                  }
-                ]
-              },
-              {
-                "title": boannews.news_title_[2],
-                "thumbnail": {
-                  "imageUrl": boannews.news_img_[2]
-                },
-                "buttons": [
-                  {
-                    "action": "webLink",
-                    "label": "구경하기",
-                    "webLinkUrl": boannews.news_link_[2]
-                  }
-                ]
-              },
-              {
-                "title": boannews.news_title_[3],
-                "thumbnail": {
-                  "imageUrl": boannews.news_img_[3]
-                },
-                "buttons": [
-                  {
-                    "action": "webLink",
-                    "label": "구경하기",
-                    "webLinkUrl": boannews.news_link_[3]
-                  }
-                ]
-              },
-              {
-                "title": boannews.news_title_[4],
-                "thumbnail": {
-                  "imageUrl": boannews.news_img_[4]
-                },
-                "buttons": [
-                  {
-                    "action": "webLink",
-                    "label": "구경하기",
-                    "webLinkUrl": boannews.news_link_[4]
-                  }
-                ]
-              },
-            ]
+            "items": []
           }
         }
       ]
     }
   }
+  for i in range(5):
+    dataSend['template']['outputs'][0]['carousel']['items'][i].append(
+    {
+      "title": boannews.news_title_[i],
+      "thumbnail": {
+        "imageUrl": boannews.news_img_[i]
+      },
+      "buttons": [
+        {
+          "action": "webLink",
+          "label": "구경하기",
+          "webLinkUrl": boannews.news_link_[i]
+        }
+      ]
+    })
   return jsonify(dataSend)
 
 @app.route('/saramin_it_list', methods=['POST'])
