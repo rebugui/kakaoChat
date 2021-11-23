@@ -11,7 +11,7 @@ day_t = []
 date = soup.select('#month_iljung > dl > dd.date_info > span')
 for t in date:
     date_t.append(t.text)
-    
-    day = soup.select('#month_iljung > dl > dd.day_info > span')
+
+day = soup.select('#month_iljung > dl > dd.day_info > span')
 for t in day:
     day_t.append(t.text)
