@@ -272,22 +272,29 @@ def ws_calendar():
       ]
     }
   }
-  if len(WS_calendar.date_t) <= 10:
-    for i in range(WS_calendar.calender_len): 
-      dataSend['template']['outputs'][0]['itemCard']['items'].append(
-        {
-          "title": WS_calendar.day_t[i],
-          "description": WS_calendar.date_t[i],
-        }
-      )
-  elif WS_calendar.calender_len > 10:
-    for i in range(10): 
-      dataSend['template']['outputs'][0]['itemCard']['items'].append(
-        {
-          "title": WS_calendar.day_t[i],
-          "description": WS_calendar.date_t[i],
-        }
-      )    
+  for i in range(10): 
+    dataSend['template']['outputs'][0]['itemCard']['items'].append(
+      {
+        "title": WS_calendar.day_t[i],
+        "description": WS_calendar.date_t[i],
+      }
+    ) 
+#  if WS_calendar.calender_len <= 10:
+#    for i in range(WS_calendar.calender_len): 
+#      dataSend['template']['outputs'][0]['itemCard']['items'].append(
+#        {
+#          "title": WS_calendar.day_t[i],
+#          "description": WS_calendar.date_t[i],
+#        }
+#      )
+#  elif WS_calendar.calender_len > 10:
+#    for i in range(10): 
+#      dataSend['template']['outputs'][0]['itemCard']['items'].append(
+#        {
+#          "title": WS_calendar.day_t[i],
+#          "description": WS_calendar.date_t[i],
+#        }
+#      )    
   return jsonify(dataSend)
 
 if __name__ == "__main__":
