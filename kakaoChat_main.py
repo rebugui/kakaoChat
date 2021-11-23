@@ -267,7 +267,12 @@ def ws_calendar():
               "header": {
                 "title": "학사 일정"
               },
-              "items": []
+              "items": [          
+                {
+                "title": '',
+                "description": '',
+                }   
+              ]
             }
           }
         ]
