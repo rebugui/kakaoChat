@@ -227,18 +227,6 @@ def ws_calendar():
                     "title": "학사일정"
                   },
                   "items": []
-                },
-                {
-                  "header": {
-                    "title": "학사일정"
-                  },
-                  "items": []
-                },
-                {
-                  "header": {
-                    "title": "학사일정"
-                  },
-                  "items": []
                 }
               ]
           }    
@@ -246,27 +234,77 @@ def ws_calendar():
       ]
     }    
   }
-  for i in range(0,5): 
-    dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
+  if len(WS_calendar.date_t > 10):
+    dataSend['template']['outputs'][0]['carousel']['items'].append(
       {
-        "title": WS_calendar.day_t[i],
-        "description": WS_calendar.date_t[i],
+        "header": {
+          "title": "학사일정"
+        },
+        "items": []
       }
     )
-  #for i in range(5,10): 
-  #  dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
-  #    {
-  #      "title": WS_calendar.day_t[i],
-  #      "description": WS_calendar.date_t[i],
-  #    }
-  #  )
-  #for i in range(10,15): 
-  #  dataSend['template']['outputs'][0]['carousel']['items'][2]['items'].append(
-  #    {
-  #      "title": WS_calendar.day_t[i],
-  #      "description": WS_calendar.date_t[i],
-  #    }
-  #  )    
+    dataSend['template']['outputs'][0]['carousel']['items'].append(
+      {
+        "header": {
+          "title": "학사일정"
+        },
+        "items": []
+      }
+    )    
+    for i in range(10,15): 
+      dataSend['template']['outputs'][0]['carousel']['items'][2]['items'].append(
+        {
+          "title": WS_calendar.day_t[i],
+          "description": WS_calendar.date_t[i],
+        }
+      )
+    for i in range(5,10): 
+      dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
+        {
+          "title": WS_calendar.day_t[i],
+          "description": WS_calendar.date_t[i],
+        }
+      )
+    for i in range(0,5): 
+      dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
+        {
+          "title": WS_calendar.day_t[i],
+          "description": WS_calendar.date_t[i],
+        }
+      )  
+
+  elif len(WS_calendar.date_t > 5):
+    dataSend['template']['outputs'][0]['carousel']['items'].append(
+      {
+        "header": {
+          "title": "학사일정"
+        },
+        "items": []
+      }
+    )    
+    for i in range(0,5): 
+      dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
+        {
+          "title": WS_calendar.day_t[i],
+          "description": WS_calendar.date_t[i],
+        }
+      )
+    for i in range(5,10): 
+      dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
+        {
+          "title": WS_calendar.day_t[i],
+          "description": WS_calendar.date_t[i],
+        }
+      )
+
+  else:
+      for i in range(0,5): 
+        dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
+          {
+            "title": WS_calendar.day_t[i],
+            "description": WS_calendar.date_t[i],
+          }
+        )
   return jsonify(dataSend)
 
 if __name__ == "__main__":
