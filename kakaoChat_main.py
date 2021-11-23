@@ -298,7 +298,7 @@ def ws_calendar():
       )
 
   else:
-      for i in range(0,5): 
+      for i in range(0,len(WS_calendar.date_t)): 
         dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
           {
             "title": WS_calendar.day_t[i],
