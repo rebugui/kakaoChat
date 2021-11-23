@@ -266,16 +266,7 @@ def ws_calendar():
             "header": {
               "title": "학사 일정"
             },
-            "items": [      
-              {
-                "title": WS_calendar.day_t[0],
-                "description": WS_calendar.date_t[0],
-              },
-              {
-                "title": WS_calendar.day_t[1],
-                "description": WS_calendar.date_t[1],
-              }
-            ]
+            "items": []
           }
         }
       ]
