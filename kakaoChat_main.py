@@ -1,5 +1,5 @@
 # server.py
-from flask import Flask, request, jsonify
+from flask import Flask, json, request, jsonify
 import sys, boannews, saramin_it, saramin_security, WS_calendar
 
 app = Flask(__name__)
@@ -20,11 +20,8 @@ def Keyboard():
 @app.route('/test', methods=['POST'])
 def test():
   ymonth = request.get_json()
-  ymonth = ymonth['action']
-  ymonth = ymonth['detailParams']
-  ymonth = ymonth['sys_date_period']
-  ymonth = ymonth['value']
-#  ymonth = ymonth['month']
+  ymonth = json.stringify(ymonth['action']['detailParams']['sys_date_period']['value'])
+  ymonth = ymonth['month']
   print(ymonth)
   content = request.get_json()
   content = content['userRequest']
