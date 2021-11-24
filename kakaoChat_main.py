@@ -21,7 +21,8 @@ def Keyboard():
 def test():
   ymonth = request.get_json()
   ymonth = json.loads(ymonth['action']['detailParams']['sys_date_period']['value'])
-  print(ymonth['month'])
+  ymonth = ymonth['month']
+  print(ymonth)
   content = request.get_json()
   content = content['userRequest']
   content = content['utterance']
