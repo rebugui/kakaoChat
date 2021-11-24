@@ -199,9 +199,15 @@ def saramin_security_list():
 
 @app.route('/WS_calendar', methods=['POST'])
 def ws_calendar():
+  ymonth = request.get_json()
+  ymonth = json.loads(ymonth['action']['detailParams']['sys_date_period']['value'])
+  yyear = ymonth['from']['year']
+  ymonth = ymonth['from']['month']
   content = request.get_json()
   content = content['userRequest']
   content = content['utterance']
+  date_t,day_t = WS_calendar(yyear,ymonth)
+
   dataSend = {
     "version": "2.0",
     "template": {
@@ -222,7 +228,7 @@ def ws_calendar():
       ]
     }    
   }
-  if len(WS_calendar.date_t) > 10:
+  if len(date_t) > 10:
     dataSend['template']['outputs'][0]['carousel']['items'].append(
       {
         "header": {
@@ -239,29 +245,29 @@ def ws_calendar():
         "items": []
       }
     )    
-    for i in range(10,len(WS_calendar.date_t)): 
+    for i in range(10,len(date_t)): 
       dataSend['template']['outputs'][0]['carousel']['items'][2]['items'].append(
         {
-          "title": WS_calendar.date_t[i],
-          "description": WS_calendar.day_t[i],
+          "title": date_t[i],
+          "description": day_t[i],
         }
       )
     for i in range(5,10): 
       dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
         {
-          "title": WS_calendar.date_t[i],
-          "description": WS_calendar.day_t[i],
+          "title": date_t[i],
+          "description": day_t[i],
         }
       )
     for i in range(0,5): 
       dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
         {
-          "title": WS_calendar.date_t[i],
-          "description": WS_calendar.day_t[i],
+          "title": date_t[i],
+          "description": day_t[i],
         }
       )  
 
-  elif len(WS_calendar.date_t) > 5:
+  elif len(date_t) > 5:
     dataSend['template']['outputs'][0]['carousel']['items'].append(
       {
         "header": {
@@ -273,24 +279,24 @@ def ws_calendar():
     for i in range(0,5): 
       dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
         {
-          "title": WS_calendar.date_t[i],
-          "description": WS_calendar.day_t[i],
+          "title": date_t[i],
+          "description": day_t[i],
         }
       )
     for i in range(5,10): 
       dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
         {
-          "title": WS_calendar.date_t[i],
-          "description": WS_calendar.day_t[i],
+          "title": date_t[i],
+          "description": day_t[i],
         }
       )
 
   else:
-      for i in range(0,len(WS_calendar.date_t)): 
+      for i in range(0,len(date_t)): 
         dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
           {
-            "title": WS_calendar.date_t[i],
-            "description": WS_calendar.day_t[i],
+            "title": date_t[i],
+            "description": day_t[i],
           }
         )
   return jsonify(dataSend)

@@ -1,17 +1,23 @@
-import requests, ssl , kakaoChat_main
+import requests, ssl
 from bs4 import BeautifulSoup
 ssl._create_default_https_context = ssl._create_unverified_context
-ymonth = 12
-main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=2021&ymonth=%d&mzcode=K00M0409&gubun=UN'%ymonth
-res = requests.get(main_url,verify=False)
-soup = BeautifulSoup(res.content, 'lxml')
-date_t = []
-day_t = []
 
-date = soup.select('#month_iljung > dl > dd.date_info > span')
-for t in date:
-    date_t.append(t.text)
+def WS_calendar(yyear,ymonth):
+    if yyear == requests.NullHandler:
+        main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=2021&ymonth=%d&mzcode=K00M0409&gubun=UN'%ymonth
+    else:
+        main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%d&ymonth=%d&mzcode=K00M0409&gubun=UN'%yyear%ymonth
+    res = requests.get(main_url,verify=False)
+    soup = BeautifulSoup(res.content, 'lxml')
+    date_t = []
+    day_t = []
 
-day = soup.select('#month_iljung > dl > dd.day_info > span')
-for t in day:
-    day_t.append(t.text)
+    date = soup.select('#month_iljung > dl > dd.date_info > span')
+    for t in date:
+        date_t.append(t.text)
+
+    day = soup.select('#month_iljung > dl > dd.day_info > span')
+    for t in day:
+        day_t.append(t.text)
+    
+    return date_t,day_t
