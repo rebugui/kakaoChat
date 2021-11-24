@@ -21,7 +21,7 @@ def Keyboard():
 def test():
   ymonth = request.get_json()
   ymonth = json.loads(ymonth['action']['detailParams']['sys_date_period']['value'])
-  #ymonth = ymonth['month']
+  ymonth = ymonth['from']['month']
   print(ymonth)
   content = request.get_json()
   content = content['userRequest']
