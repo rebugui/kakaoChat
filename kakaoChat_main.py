@@ -20,7 +20,7 @@ def Keyboard():
 @app.route('/test', methods=['POST'])
 def test():
   content = request.get_json()
-  test = content
+  print(content)
   content = content['userRequest']
   content = content['utterance']
   dataSend = {
@@ -35,7 +35,6 @@ def test():
       ]
     }
   }
-  print(jsonify(test))
   return jsonify(dataSend)
 
 @app.route('/boannews_print', methods=['POST'])
