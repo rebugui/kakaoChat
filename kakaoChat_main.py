@@ -20,7 +20,7 @@ def Keyboard():
 @app.route('/test', methods=['POST'])
 def test():
   content = request.get_json()
-  test = content
+  test = request
   content = content['userRequest']
   content = content['utterance']
   dataSend = {
