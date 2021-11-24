@@ -17,12 +17,6 @@ def Keyboard():
   }
   return jsonify(dataSend)
 
-def test1():
-  ymonth = request.get_json()
-  ymonth = json.loads(ymonth['action']['detailParams']['sys_date_period']['value'])
-  ymonth = ymonth['from']['month']
-  return ymonth
-
 @app.route('/test', methods=['POST'])
 def test():
   ymonth = request.get_json()
