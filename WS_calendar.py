@@ -1,7 +1,7 @@
-import requests, ssl
+import requests, ssl , kakaoChat_main
 from bs4 import BeautifulSoup
 ssl._create_default_https_context = ssl._create_unverified_context
-ymonth = 12
+ymonth = kakaoChat_main.test1()
 main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=2021&ymonth=%d&mzcode=K00M0409&gubun=UN'%ymonth
 res = requests.get(main_url,verify=False)
 soup = BeautifulSoup(res.content, 'lxml')
