@@ -16,6 +16,7 @@ def WS_calendar(yyear,ymonth):
     else:
         main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(yyear,ymonth)
 
+    print(main_url)
     res = requests.get(main_url,verify=False)
     soup = BeautifulSoup(res.content, 'lxml')
     date_t = []
