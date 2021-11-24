@@ -285,7 +285,7 @@ def ws_calendar():
           "description": day_t[i],
         }
       )
-    for i in range(5,10): 
+    for i in range(5,len(date_t)): 
       dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
         {
           "title": date_t[i],
