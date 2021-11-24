@@ -24,7 +24,7 @@ def test():
   ymonth = ymonth['detailParams']
   ymonth = ymonth['sys_date_period']
   ymonth = ymonth['value']
-  ymonth = ymonth['month']
+#  ymonth = ymonth['month']
   print(ymonth)
   content = request.get_json()
   content = content['userRequest']
