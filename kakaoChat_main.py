@@ -307,7 +307,7 @@ def ws_calendar():
   else:
     dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
       {
-        "title": "%s월 학사일정이 없습니다."%ymonth,
+        "title": "%s년 %s월 학사일정이 없습니다."%(yyear,ymonth)
       }
     )    
   return jsonify(dataSend)
