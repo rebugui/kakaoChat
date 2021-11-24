@@ -5,12 +5,16 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 def WS_calendar(yyear,ymonth):
     if (ymonth == None) and (yyear == None):
-        main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(datetime.today().year,datetime.today().month)
+        yyear = datetime.today().year
+        ymonth = datetime.today().month
+        main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(yyear,ymonth)
     elif (ymonth == None) or (yyear == None):
         if yyear == None:
-            main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(datetime.today().year,ymonth)
+            yyear = datetime.today().year
+            main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(yyear,ymonth)
         else:
-            main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(yyear,datetime.today().month)
+            ymonth = datetime.today().month
+            main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(yyear,ymonth)
     elif int(yyear)%100 == int(yyear):
         main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=20%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(yyear,ymonth)
     else:
