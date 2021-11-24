@@ -292,8 +292,7 @@ def ws_calendar():
           "description": day_t[i],
         }
       )
-
-  else:
+  elif len(date_t) > 0:
       for i in range(0,len(date_t)): 
         dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
           {
@@ -301,6 +300,12 @@ def ws_calendar():
             "description": day_t[i],
           }
         )
+  else:
+    dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
+      {
+        "title": "%d월 학사일정이 없습니다."%ymonth,
+      }
+    )    
   return jsonify(dataSend)
 
 if __name__ == "__main__":
