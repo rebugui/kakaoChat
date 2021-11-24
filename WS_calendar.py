@@ -4,12 +4,9 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 def WS_calendar(yyear,ymonth):
     if yyear == None:
-        main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=2021&ymonth=%s&mzcode=K00M0409&gubun=UN'%ymonth
-    elif int(yyear)/100 == 0 :
-        main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=20%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%yyear%ymonth
+        main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=2021&ymonth=%d&mzcode=K00M0409&gubun=UN'%ymonth
     else:
-        main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%yyear%ymonth
-    
+        main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=20%d&ymonth=%d&mzcode=K00M0409&gubun=UN'%yyear%ymonth
     res = requests.get(main_url,verify=False)
     soup = BeautifulSoup(res.content, 'lxml')
     date_t = []
