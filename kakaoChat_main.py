@@ -1,5 +1,6 @@
 # server.py
 from flask import Flask, request, jsonify
+from datetime import datetime
 import sys, boannews, saramin_it, saramin_security, WS_calendar, json, Test
 
 app = Flask(__name__)
@@ -199,6 +200,8 @@ def saramin_security_list():
 
 @app.route('/WS_calendar', methods=['POST'])
 def ws_calendar():
+  yyear = datetime.today().year
+  ymonth = datetime.today().month
   ydate = request.get_json()
   ydate = json.loads(ydate['action']['detailParams']['sys_date_period']['value'])
   ydate = ydate['from']['date']
@@ -210,7 +213,7 @@ def ws_calendar():
   content = content['userRequest']
   content = content['utterance']
   date_t,day_t = WS_calendar.WS_calendar(yyear,ymonth)
-  
+
   dataSend = {
     "version": "2.0",
     "template": {
