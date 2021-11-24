@@ -20,7 +20,7 @@ def Keyboard():
 @app.route('/test', methods=['POST'])
 def test():
   content = request.get_json()
-  ymonth = content['action']['detailParams']['sys_date_period']['value']['month']
+  ymonth = int(content['action']['detailParams']['sys_date_period']['value']['month'])
   print(ymonth)
   content = content['userRequest']
   content = content['utterance']
