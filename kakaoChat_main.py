@@ -201,12 +201,12 @@ def saramin_security_list():
 def ws_calendar():
   ymonth = request.get_json()
   ymonth = json.loads(ymonth['action']['detailParams']['sys_date_period']['value'])
+  print(ymonth)
   yyear = ymonth['from']['year']
   ymonth = ymonth['from']['month']
   content = request.get_json()
   content = content['userRequest']
   content = content['utterance']
-  print(yyear,ymonth)
   date_t,day_t = WS_calendar.WS_calendar(yyear,ymonth)
 
   print(yyear,ymonth)
