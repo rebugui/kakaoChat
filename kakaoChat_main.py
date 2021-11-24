@@ -19,9 +19,14 @@ def Keyboard():
 
 @app.route('/test', methods=['POST'])
 def test():
+  ymonth = request.get_json()
+  ymonth = ymonth['action']
+  ymonth = ymonth['detailParams']
+  ymonth = ymonth['sys_date_period']
+  ymonth = ymonth['value']
+  ymonth = ymonth['month']
+  print(ymonth)
   content = request.get_json()
-  #ymonth = content['action']['detailParams']['sys_date_period']['value']['month']
-  print(content['action']['detailParams']['sys_date_period']['value']['month'])
   content = content['userRequest']
   content = content['utterance']
   dataSend = {
