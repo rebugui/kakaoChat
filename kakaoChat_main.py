@@ -1,6 +1,6 @@
 # server.py
 from flask import Flask, request, jsonify
-import sys, boannews, saramin_it, saramin_security, WS_calendar, json
+import sys, boannews, saramin_it, saramin_security, WS_calendar, json, Test
 
 app = Flask(__name__)
 
@@ -21,7 +21,11 @@ def Keyboard():
 def test():
   ymonth = request.get_json()
   ymonth = json.loads(ymonth['action']['detailParams']['sys_date_period']['value'])
+  yyear = ymonth['from']['year']
   ymonth = ymonth['from']['month']
+
+  y,m = Test.Test1(yyear,ymonth)
+
   content = request.get_json()
   content = content['userRequest']
   content = content['utterance']
@@ -31,7 +35,8 @@ def test():
       "outputs": [
         {
           "simpleText": {
-            "text": 'test'
+            "text": y,
+            "text": m
           }
         }
       ]
