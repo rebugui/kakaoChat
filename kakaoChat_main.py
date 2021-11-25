@@ -20,13 +20,6 @@ def Keyboard():
 
 @app.route('/test', methods=['POST'])
 def test():
-  ymonth = request.get_json()
-  ymonth = json.loads(ymonth['action']['detailParams']['sys_date_period']['value'])
-  yyear = ymonth['from']['year']
-  ymonth = ymonth['from']['month']
-
-  y,m = Test.Test1(yyear,ymonth)
-
   content = request.get_json()
   content = content['userRequest']
   content = content['utterance']
@@ -36,8 +29,8 @@ def test():
       "outputs": [
         {
           "simpleText": {
-            "text": y,
-            "text": m
+            "text": "test",
+            "text": "test"
           }
         }
       ]
@@ -102,7 +95,7 @@ def saramin_it_list():
     dataSend['template']['outputs'][0]['carousel']['items'].append(
       {
         "header": {
-          "title": "IT개발·데이터 채용 공고(%d)"%i
+          "title": "IT개발·데이터 채용 공고"
         },
         "items": []
       }       
@@ -200,15 +193,9 @@ def saramin_security_list():
 
 @app.route('/WS_calendar', methods=['POST'])
 def ws_calendar():
-  yyear = datetime.today().year
-  ymonth = datetime.today().month
   ydate = request.get_json()
-  ydate = json.loads(ydate['action']['detailParams']['sys_date_period']['value'])
-  ydate = ydate['from']['date']
-  yyear = ydate.split('-')[0]
-  ymonth = ydate.split('-')[1]
-  print(yyear,ymonth)
-
+  ydate = json.loads(ydate['action']['detailParams']['sys_date_period']['value']['from']['date'])
+  yyear,ymonth = ydate.split('-')[0],ydate.split('-')[1]
   content = request.get_json()
   content = content['userRequest']
   content = content['utterance']

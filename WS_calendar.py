@@ -15,7 +15,8 @@ def WS_calendar(yyear,ymonth):
         else:
             ymonth = datetime.today().month
             main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(yyear,ymonth)
-    elif int(yyear)%100 == int(yyear):
+    elif int(yyear) % 100 == int(yyear):
+        yyear = int(yyear)%100
         main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=20%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(yyear,ymonth)
     else:
         main_url = 'https://www.woosuk.ac.kr/classScheduleList.do?yyear=%s&ymonth=%s&mzcode=K00M0409&gubun=UN'%(yyear,ymonth)
