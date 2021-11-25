@@ -155,6 +155,7 @@ def saramin_security_list():
       )
   return jsonify(dataSend)
 
+@app.route('/WS_calendar', methods=['POST'])
 def ws_calendar():
   content = request.get_json()
   content = content['userRequest']
