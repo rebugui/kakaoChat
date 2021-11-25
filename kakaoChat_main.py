@@ -164,7 +164,7 @@ def ws_calendar():
   ydate = ydate['from']['date']
   yyear,ymonth = ydate.split('-')[0],ydate.split('-')[1]
   date_t,day_t = WS_calendar.WS_calendar(yyear,ymonth)
-
+  print(yyear,ymonth)
   dataSend = {
     "version": "2.0",
     "template": {
