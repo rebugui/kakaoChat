@@ -100,35 +100,17 @@ def saramin_it_list():
         "items": []
       }       
     )
-  for i in range(0,5):
-      dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
-          {
-              "title": saramin_it.company_t[i],
-              "description": saramin_it.title_t[i],
-              "link": {
-                "web": saramin_it.link_t[i]
-                  }
-          }
-      ) 
-  for i in range(5,10):
-      dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
-          {
-              "title": saramin_it.company_t[i],
-              "description": saramin_it.title_t[i],
-              "link": {
-                "web": saramin_it.link_t[i]
-                  }
-          }
-      )
-  for i in range(10,15):
-      dataSend['template']['outputs'][0]['carousel']['items'][2]['items'].append(
-          {
-              "title": saramin_it.company_t[i],
-              "description": saramin_it.title_t[i],
-              "link": {
-                "web": saramin_it.link_t[i]
-                  }
-          }
+    for t in range(5):
+      t = t + (i * 5)
+          
+      dataSend['template']['outputs'][0]['carousel']['items'][i]['items'].append(
+        {
+          "title": saramin_it.company_t[t],
+          "description": saramin_it.title_t[t],
+          "link": {
+            "web": saramin_it.link_t[t]
+              }
+        }
       )
   return jsonify(dataSend)
 
@@ -173,15 +155,14 @@ def saramin_security_list():
       )
   return jsonify(dataSend)
 
-@app.route('/WS_calendar', methods=['POST'])
 def ws_calendar():
+  content = request.get_json()
+  content = content['userRequest']
+  content = content['utterance']
   ydate = request.get_json()
   ydate = json.loads(ydate['action']['detailParams']['sys_date_period']['value'])
   ydate = ydate['from']['date']
   yyear,ymonth = ydate.split('-')[0],ydate.split('-')[1]
-  content = request.get_json()
-  content = content['userRequest']
-  content = content['utterance']
   date_t,day_t = WS_calendar.WS_calendar(yyear,ymonth)
 
   dataSend = {
@@ -204,83 +185,43 @@ def ws_calendar():
       ]
     }    
   }
-  if len(date_t) > 10:
-    dataSend['template']['outputs'][0]['carousel']['items'].append(
-      {
-        "header": {
-          "title": "학사일정"
-        },
-        "items": []
-      }
-    )
-    dataSend['template']['outputs'][0]['carousel']['items'].append(
-      {
-        "header": {
-          "title": "학사일정"
-        },
-        "items": []
-      }
-    )    
-    for i in range(10,len(date_t)): 
-      dataSend['template']['outputs'][0]['carousel']['items'][2]['items'].append(
-        {
-          "title": date_t[i],
-          "description": day_t[i],
-        }
-      )
-    for i in range(5,10): 
-      dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
-        {
-          "title": date_t[i],
-          "description": day_t[i],
-        }
-      )
-    for i in range(0,5): 
-      dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
-        {
-          "title": date_t[i],
-          "description": day_t[i],
-        }
-      )  
-
+  if len(date_t) > 15:
+    item_count = 4
+  elif len(date_t) > 10:
+    item_count = 3
   elif len(date_t) > 5:
-    dataSend['template']['outputs'][0]['carousel']['items'].append(
-      {
-        "header": {
-          "title": "학사일정"
-        },
-        "items": []
-      }
-    )    
-    for i in range(0,5): 
-      dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
-        {
-          "title": date_t[i],
-          "description": day_t[i],
-        }
-      )
-    for i in range(5,len(date_t)): 
-      dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
-        {
-          "title": date_t[i],
-          "description": day_t[i],
-        }
-      )
-  elif len(date_t) > 0:
-      for i in range(0,len(date_t)): 
-        dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
-          {
-            "title": date_t[i],
-            "description": day_t[i],
-          }
-        )
+    item_count = 2
   else:
+    item_count = 1
+    
+  if len(date_t) == 0:
     dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
       {
         "title": "%s년 %s월 학사일정이 없습니다."%(yyear,ymonth)
       }
     )    
+  else:
+    for i in range(item_count):
+      dataSend['template']['outputs'][0]['carousel']['items'].append(
+        {
+          "header": {
+            "title": "학사일정"
+          },
+          "items": []
+        }
+      )
+      for t in range(5):
+        t = t + (i * 5)
+        if t > len(date_t):
+          break
+        dataSend['template']['outputs'][0]['carousel']['items'][i]['items'].append(
+          {
+            "title": date_t[t],
+            "description": day_t[t],
+          }
+        )
   return jsonify(dataSend)
+
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port=5000, debug=True)
