@@ -194,7 +194,8 @@ def saramin_security_list():
 @app.route('/WS_calendar', methods=['POST'])
 def ws_calendar():
   ydate = request.get_json()
-  ydate = json.loads(ydate['action']['detailParams']['sys_date_period']['value']['from']['date'])
+  ydate = json.loads(ydate['action']['detailParams']['sys_date_period']['value'])
+  ydate = ydate['from']['date']
   yyear,ymonth = ydate.split('-')[0],ydate.split('-')[1]
   content = request.get_json()
   content = content['userRequest']
