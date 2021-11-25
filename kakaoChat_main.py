@@ -181,14 +181,17 @@ def ws_calendar():
   item_count = (len(date_t) // 5)
   if (len(date_t) % 5) > 0:
     item_count = item_count + 1
-  print(len(date_t))
   if date_t == None:
     dataSend['template']['outputs'][0]['carousel']['items'].append(
         {
           "header": {
             "title": "학사일정"
           },
-          "items": "%s년 %s월 학사일정이 없습니다."%(yyear,ymonth)
+          "items": [
+            {
+              "title": "%s년 %s월 학사일정이 없습니다."%(yyear,ymonth),
+            }
+          ]
         }
       )    
     print("%s년 %s월 학사일정이 없습니다."%(yyear,ymonth))
