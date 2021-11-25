@@ -165,7 +165,6 @@ def ws_calendar():
   ydate = ydate['from']['date']
   yyear,ymonth = ydate.split('-')[0],ydate.split('-')[1]
   date_t,day_t = WS_calendar.WS_calendar(yyear,ymonth)
-  print(yyear,ymonth)
   dataSend = {
     "version": "2.0",
     "template": {
@@ -179,7 +178,6 @@ def ws_calendar():
       ]
     }    
   }
-  print("date_t 개수"+len(date_t))
   if len(date_t) > 15:
     item_count = 4
   elif len(date_t) > 10:
@@ -211,8 +209,8 @@ def ws_calendar():
       )
       for t in range(5):
         t = t + (i * 5)
-        #if t > len(date_t):
-        #  break
+        if t > len(date_t):
+          break
         dataSend['template']['outputs'][0]['carousel']['items'][i]['items'].append(
           {
             "title": date_t[t],
