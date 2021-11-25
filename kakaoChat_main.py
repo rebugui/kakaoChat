@@ -1,7 +1,7 @@
 # server.py
 from flask import Flask, request, jsonify
 from datetime import datetime
-import sys, boannews, saramin_it, saramin_security, WS_calendar, json, Test
+import sys, boannews, saramin_it, saramin_security, WS_calendar, json
 
 app = Flask(__name__)
 
