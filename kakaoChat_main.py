@@ -26,12 +26,11 @@ def test():
   dataSend = {
     "version": "2.0",
     "template": {
-      "outputs": [
-        {
-          "simpleText": {
-            "text": "test",
-            "text": "test"
-          }
+      "outputs": [{
+        "simpleImage": {
+            "imageUrl": "https://www.kisa.or.kr/jsp/common/downloadAction.jsp?bno=282&dno=7&fseq=1",
+            "altText": "ryan with hood"
+        }
         }
       ]
     }
