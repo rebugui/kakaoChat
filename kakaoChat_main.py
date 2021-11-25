@@ -190,12 +190,11 @@ def ws_calendar():
           },
           "items": [
             {
-              "title": "%s년 %s월 학사일정이 없습니다."%(yyear,ymonth),
+              "title": "20%s년 %s월 학사일정이 없습니다."%(int(yyear)%100,ymonth),
             }
           ]
         }
       )    
-    print("%s년 %s월 학사일정이 없습니다."%(yyear,ymonth))
   else:
     for i in range(item_count):
       dataSend['template']['outputs'][0]['carousel']['items'].append(
