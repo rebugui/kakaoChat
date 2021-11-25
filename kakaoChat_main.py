@@ -209,15 +209,14 @@ def ws_calendar():
       )
       for t in range(5):
         t = t + (i * 5)
-        if t > len(date_t):
+        if t >= len(date_t):
           break
         dataSend['template']['outputs'][0]['carousel']['items'][i]['items'].append(
           {
             "title": date_t[t],
-            "description": day_t[t],
+            "description": day_t[t]
           }
         )
-      print(t)
   return jsonify(dataSend)
 
 
