@@ -183,6 +183,7 @@ def ws_calendar():
     item_count = item_count + 1
 
   if len(date_t) == None:
+    print(date_t)
     dataSend['template']['outputs'][0]['carousel']['items'].append(
         {
           "header": {
