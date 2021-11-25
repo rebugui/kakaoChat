@@ -154,40 +154,22 @@ def saramin_security_list():
     dataSend['template']['outputs'][0]['carousel']['items'].append(
       {
         "header": {
-          "title": "보안직무 채용 공고(%d)"%i
+          "title": "보안직무 채용 공고"
         },
         "items": []
       }       
     )
-  for i in range(0,5):
-    dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
+    for t in range(5):
+      t = t + (i * 5)
+          
+      dataSend['template']['outputs'][0]['carousel']['items'][i]['items'].append(
         {
-            "title": saramin_security.company_t[i],
-            "description": saramin_security.title_t[i],
-            "link": {
-              "web": saramin_security.link_t[i]
-                }
+          "title": saramin_security.company_t[t],
+          "description": saramin_security.title_t[t],
+          "link": {
+            "web": saramin_security.link_t[t]
+              }
         }
-    ) 
-  for i in range(5,10):
-      dataSend['template']['outputs'][0]['carousel']['items'][1]['items'].append(
-          {
-              "title": saramin_security.company_t[i],
-              "description": saramin_security.title_t[i],
-              "link": {
-                "web": saramin_security.link_t[i]
-                  }
-          }
-      )
-  for i in range(10,15):
-      dataSend['template']['outputs'][0]['carousel']['items'][2]['items'].append(
-          {
-              "title": saramin_security.company_t[i],
-              "description": saramin_security.title_t[i],
-              "link": {
-                "web": saramin_security.link_t[i]
-                  }
-          }
       )
   return jsonify(dataSend)
 
