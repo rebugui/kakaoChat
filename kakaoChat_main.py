@@ -172,14 +172,7 @@ def ws_calendar():
         {
           "carousel": {
               "type": "listCard",
-              "items": [
-                {
-                  "header": {
-                    "title": "학사일정"
-                  },
-                  "items": []
-                }
-              ]
+              "items": []
           }    
         }
       ]
@@ -193,13 +186,16 @@ def ws_calendar():
     item_count = 2
   else:
     item_count = 1
-    
+
   if len(date_t) == 0:
-    dataSend['template']['outputs'][0]['carousel']['items'][0]['items'].append(
-      {
-        "title": "%s년 %s월 학사일정이 없습니다."%(yyear,ymonth)
-      }
-    )    
+    dataSend['template']['outputs'][0]['carousel']['items'].append(
+              {
+          "header": {
+            "title": "학사일정"
+          },
+          "items": "%s년 %s월 학사일정이 없습니다."%(yyear,ymonth)
+        }
+      )    
   else:
     for i in range(item_count):
       dataSend['template']['outputs'][0]['carousel']['items'].append(
