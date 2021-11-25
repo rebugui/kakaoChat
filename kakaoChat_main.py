@@ -178,14 +178,9 @@ def ws_calendar():
       ]
     }    
   }
-  if len(date_t) > 15:
-    item_count = 4
-  elif len(date_t) > 10:
-    item_count = 3
-  elif len(date_t) > 5:
-    item_count = 2
-  else:
-    item_count = 1
+  item_count = (len(date_t) // 5)
+  if (len(date_t) % 5) > 0:
+    item_count = item_count + 1
 
   if len(date_t) == 0:
     dataSend['template']['outputs'][0]['carousel']['items'].append(
@@ -218,7 +213,6 @@ def ws_calendar():
           }
         )
   return jsonify(dataSend)
-
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port=5000, debug=True)
