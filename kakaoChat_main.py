@@ -189,7 +189,7 @@ def ws_calendar():
 
   if len(date_t) == 0:
     dataSend['template']['outputs'][0]['carousel']['items'].append(
-              {
+        {
           "header": {
             "title": "학사일정"
           },
