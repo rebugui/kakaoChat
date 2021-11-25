@@ -178,6 +178,7 @@ def ws_calendar():
       ]
     }    
   }
+  print("date_t 개수"+len(date_t))
   if len(date_t) > 15:
     item_count = 4
   elif len(date_t) > 10:
