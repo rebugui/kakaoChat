@@ -27,10 +27,9 @@ def test():
     "version": "2.0",
     "template": {
       "outputs": [{
-        "simpleImage": {
-            "imageUrl": "https://www.kisa.or.kr/jsp/common/downloadAction.jsp?bno=282&dno=7&fseq=1",
-            "altText": "ryan with hood"
-        }
+        "simpleText": {
+          "text": "간단한 텍스트 요소입니다."
+          }
         }
       ]
     }
@@ -162,7 +161,7 @@ def ws_calendar():
   ydate = request.get_json()
   ydate = json.loads(ydate['action']['detailParams']['sys_date_period']['value'])
   ydate = ydate['from']['date']
-  yyear,ymonth = ydate.split('-')[0],ydate.split('-')[1]
+  yyear,ymonth = int(ydate.split('-')[0])%100,ydate.split('-')[1]
   date_t,day_t = WS_calendar.WS_calendar(yyear,ymonth)
   dataSend = {
     "version": "2.0",
@@ -189,7 +188,7 @@ def ws_calendar():
           },
           "items": [
             {
-              "title": "20%s년 %s월 학사일정이 없습니다."%(int(yyear)%100,ymonth),
+              "title": "20%s년 %s월 학사일정이 없습니다."%(yyear,ymonth),
             }
           ]
         }
