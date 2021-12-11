@@ -1,7 +1,7 @@
 # server.py
 from flask import Flask, request, jsonify
 from datetime import datetime
-import sys, boannews, saramin_it, saramin_security, WS_calendar, json
+import sys, boannews, saramin, WS_calendar, json
 
 app = Flask(__name__)
 
@@ -90,7 +90,7 @@ def saramin_it_list():
       ]
     }
   }
-  company_t,title_t,link_t = saramin_security.it()
+  company_t,title_t,link_t = saramin.it()
 
   for i in range(3):
     dataSend['template']['outputs'][0]['carousel']['items'].append(
@@ -133,7 +133,7 @@ def saramin_security_list():
       ]
     }
   }
-  company_t,title_t,link_t = saramin_security.security()
+  company_t,title_t,link_t = saramin.security()
   for i in range(3):
     dataSend['template']['outputs'][0]['carousel']['items'].append(
       {
