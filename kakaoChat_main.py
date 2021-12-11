@@ -54,18 +54,19 @@ def boannews_print():
       ]
     }
   }
+  news_title_,news_link_,news_img_ = boannews.boannews()
   for i in range(5):
     dataSend['template']['outputs'][0]['carousel']['items'].append(
     {
-      "title": boannews.news_title_[i],
+      "title": news_title_[i],
       "thumbnail": {
-        "imageUrl": boannews.news_img_[i]
+        "imageUrl": news_img_[i]
       },
       "buttons": [
         {
           "action": "webLink",
           "label": "구경하기",
-          "webLinkUrl": boannews.news_link_[i]
+          "webLinkUrl": news_link_[i]
         }
       ]
     })
@@ -89,6 +90,8 @@ def saramin_it_list():
       ]
     }
   }
+  company_t,title_t,link_t = saramin_security.it()
+
   for i in range(3):
     dataSend['template']['outputs'][0]['carousel']['items'].append(
       {
@@ -103,10 +106,10 @@ def saramin_it_list():
           
       dataSend['template']['outputs'][0]['carousel']['items'][i]['items'].append(
         {
-          "title": saramin_it.company_t[t],
-          "description": saramin_it.title_t[t],
+          "title": company_t[t],
+          "description": title_t[t],
           "link": {
-            "web": saramin_it.link_t[t]
+            "web": link_t[t]
               }
         }
       )
@@ -130,6 +133,7 @@ def saramin_security_list():
       ]
     }
   }
+  company_t,title_t,link_t = saramin_security.security()
   for i in range(3):
     dataSend['template']['outputs'][0]['carousel']['items'].append(
       {
@@ -141,13 +145,12 @@ def saramin_security_list():
     )
     for t in range(5):
       t = t + (i * 5)
-          
       dataSend['template']['outputs'][0]['carousel']['items'][i]['items'].append(
         {
-          "title": saramin_security.company_t[t],
-          "description": saramin_security.title_t[t],
+          "title": company_t[t],
+          "description": title_t[t],
           "link": {
-            "web": saramin_security.link_t[t]
+            "web": link_t[t]
               }
         }
       )
