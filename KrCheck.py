@@ -2,8 +2,8 @@
 
 from hanspell import spell_checker
 
-def krcheck(input)
-    input_convert = input.replace('.','.#').split('#')
+def krcheck(input2)
+    input_convert = input2.replace('.','.#').split('#')
     input_list =  [""]
     
     for i in input_convert:
