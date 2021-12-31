@@ -14,6 +14,6 @@ for i in input_convert:
     else:
         input_list.append(i)
 
-result = spell_checker.check(input_list)
+result = spell_checker.check(input)
 
 print(result.checked)
