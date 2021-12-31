@@ -2,7 +2,7 @@
 
 from hanspell import spell_checker
 
-def krcheck(input)
+def krcheck(input):
     input_convert = input.replace('.','.#').split('#')
     input_list =  [""]
     
