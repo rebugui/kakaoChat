@@ -9,7 +9,6 @@ def krcheck(input):
     input_list =  [""]
 
     for i in input_convert:
-        print(i)
         if len(input_list[-1]) + len(i) < 500:
             input_list[-1] += i
         else:
@@ -31,7 +30,7 @@ def main():
     for i in result:
         print(i.checked)
         time = time + i.time
-    print("진행시간: "+time)
+    print("진행시간: "+str(time))
 
 
 if __name__ == "__main__":
