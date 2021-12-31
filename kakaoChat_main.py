@@ -21,6 +21,8 @@ def Keyboard():
 @app.route('/test', methods=['POST'])
 def test():
   content = request.get_json()
+  print("입력 테스트 입니다.")
+  print(content)
   content = content['userRequest']
   content = content['utterance']
   dataSend = {
