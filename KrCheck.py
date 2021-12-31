@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from hanspell import spell_checker
-input = "안녕하세여 양우혁임미다."
-input_convert = input.replace('.','.#').split('#')
+input = "안녕하세여 양우혁 입미다."
 
+input_convert = input.replace('.','.#').split('#')
 input_list =  [""]
-output_list = [""]
 
 for i in input_convert:
     print(i)
@@ -16,4 +15,4 @@ for i in input_convert:
 
 result = spell_checker.check(input)
 
-print(result.checked)
+print(input_list[0].checked)
