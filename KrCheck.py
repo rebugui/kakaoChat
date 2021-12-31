@@ -13,6 +13,6 @@ for i in input_convert:
     else:
         input_list.append(i)
 
-result = spell_checker.check(input)
+result = spell_checker.check(input_list)
 
-print(input_list[0].checked)
+print(result[0].checked)
