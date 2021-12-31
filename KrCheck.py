@@ -22,7 +22,7 @@ def main():
     input_convert,result = krcheck(input)
 
     for i in result:
-        print(result.checked) 
+        print(result) 
 
 if __name__ == "__main__":
 	main()
