@@ -20,8 +20,8 @@ def krcheck(input):
 def main():
     input = '의미는 메인 함수의 선언, 시작을 의미합니다. 해당 코드 밑에 main 등의 함수 호출 코드를 작성해서 함수의 기능을 수행합니다.의미는 메인 함수의 선언, 시작을 의미합니다. 해당 코드 밑에 main 등의 함수 호출 코드를 작성해서 함수의 기능을 수행합니다.의미는 메인 함수의 선언, 시작을 의미합니다. 해당 코드 밑에 main 등의 함수 호출 코드를 작성해서 함수의 기능을 수행합니다.'
     input_convert,result = krcheck(input)
-    print(result) 
-
+    print(result.checked) 
+    
 #    for i in result:
 
 if __name__ == "__main__":
