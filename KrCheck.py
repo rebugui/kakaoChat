@@ -7,7 +7,7 @@ sys.setdefaultencoding("utf-8")
 def krcheck(input):
     input_convert = input.replace('.','.#').split('#')
     input_list =  [""]
-    result = 
+
     for i in input_convert:
         print(i)
         if len(input_list[-1]) + len(i) < 500:
