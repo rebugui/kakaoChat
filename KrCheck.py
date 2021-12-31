@@ -25,8 +25,8 @@ def main():
     print("검사 성공 여부: "+str(result[0].result))
     print("검사 전: "+result[0].original)
     print("검사 후: "+result[0].checked)
-    print("애러 갯수: "+result[0].errors)
-    print("진행 시간: "+result[0].time)
+    print("애러 갯수: "+str(result[0].errors))
+    print("진행 시간: "+str(result[0].time))
 
 
 if __name__ == "__main__":
