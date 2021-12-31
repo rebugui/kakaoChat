@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import sys
 from hanspell import spell_checker
 sys.setdefaultencoding('utf-8')
 
