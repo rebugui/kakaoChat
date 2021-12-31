@@ -2,15 +2,6 @@
 
 from hanspell import spell_checker
 
-def main():
-    input = u'의미는 메인 함수의 선언, 시작을 의미합니다. 해당 코드 밑에 main 등의 함수 호출 코드를 작성해서 함수의 기능을 수행합니다.의미는 메인 함수의 선언, 시작을 의미합니다. 해당 코드 밑에 main 등의 함수 호출 코드를 작성해서 함수의 기능을 수행합니다.의미는 메인 함수의 선언, 시작을 의미합니다. 해당 코드 밑에 main 등의 함수 호출 코드를 작성해서 함수의 기능을 수행합니다.'
-    input_convert,result = krcheck(input)
-    print(input_convert) 
-    print(result) 
-
-if __name__ == "__main__":
-	main()
-
 def krcheck(input)
     input_convert = input.replace('.','.#').split('#')
     input_list =  [""]
@@ -25,3 +16,13 @@ def krcheck(input)
     result = spell_checker.check(input_list)
 
     return input_convert,result
+
+def main():
+    input1 = u'의미는 메인 함수의 선언, 시작을 의미합니다. 해당 코드 밑에 main 등의 함수 호출 코드를 작성해서 함수의 기능을 수행합니다.의미는 메인 함수의 선언, 시작을 의미합니다. 해당 코드 밑에 main 등의 함수 호출 코드를 작성해서 함수의 기능을 수행합니다.의미는 메인 함수의 선언, 시작을 의미합니다. 해당 코드 밑에 main 등의 함수 호출 코드를 작성해서 함수의 기능을 수행합니다.'
+    input_convert,result = krcheck(input1)
+    print(input_convert) 
+    print(result) 
+
+
+if __name__ == "__main__":
+	main()
