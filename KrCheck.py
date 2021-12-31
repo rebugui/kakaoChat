@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
+
 from hanspell import spell_checker
-input = "안녕 하세요오오오오엉"
+input = "안녕하세여 양우혁임미다."
 input_convert = input.replace('.','.#').split('#')
- 
+
 input_list =  [""]
 output_list = [""]
 
@@ -10,11 +12,8 @@ for i in input_convert:
     if len(input_list[-1]) + len(i) < 500:
         input_list[-1] += i
     else:
-        input_list.append(i)  
- 
+        input_list.append(i)
+
 result = spell_checker.check(input_list)
 
-for i in result.checked:
-    output_list.append(i)
-
-print(output_list[i])
+print(result)
