@@ -16,4 +16,4 @@ for i in input_convert:
 
 result = spell_checker.check(input_list)
 
-print(result)
+print(result.checked)
