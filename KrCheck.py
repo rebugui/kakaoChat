@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
-import imp, sys
 from hanspell import spell_checker
-imp.reload(sys)
-sys.setdefaultencoding("utf-8")
 
 def KrCheck(input):
     input_convert = input.replace('.','.#').split('#')
