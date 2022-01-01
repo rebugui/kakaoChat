@@ -17,6 +17,6 @@ def KrCheck(input):
     for i in output_text:
         errors_count = errors_count + int(i.errors)
         running_time = running_time + int(i.time)
-        output_text = output_text + i.checked
+        output_text = output_text + str(i.checked)
 
     return output_text,errors_count,running_time
