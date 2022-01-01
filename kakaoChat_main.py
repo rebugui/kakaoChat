@@ -46,14 +46,14 @@ def KrCheck_result():
   content = content['utterance']
   input_text = request.get_json()
   input_text = json.loads(input_text['action']['detailParams'])
-  print (input_text)
 
+  print (input_text)
   dataSend = {
     "version": "2.0",
     "template": {
       "outputs": [{
         "simpleText": {
-          "text": "입력 값입니다.: %s"%(input_text)
+          "text": "입력 값입니다.: %s"%(content)
           }
         }
       ]
