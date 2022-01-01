@@ -1,4 +1,5 @@
 # server.py
+# -*- coding: utf-8 -*-
 from flask import Flask, request, jsonify
 from datetime import datetime
 import sys, boannews, saramin, WS_calendar, json
