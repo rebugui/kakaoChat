@@ -47,7 +47,7 @@ def KrCheck_result():
   input_text = request.get_json()
   input_text = input_text['action']['detailParams']['sys_constant']['value']
 
-  output_text = KrCheck.KrCheck(output_text)
+  output_text = KrCheck.KrCheck(input_text)
   print(output_text)
 
   dataSend = {
