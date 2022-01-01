@@ -4,7 +4,7 @@ from hanspell import spell_checker
 def KrCheck(input):
     input_convert = input.replace('.','.#').split('#')
     input_list =  [""]
-    output_text = [""]
+    output_text = ""
     running_time = 0
     errors_count = 0
 
@@ -18,6 +18,6 @@ def KrCheck(input):
     for i in output_text:
         errors_count = errors_count + int(i.errors)
         running_time = running_time + int(i.time)
-        output_text = output_text + i.checked
+        output_text = output_text + str(i.checked)
 
     return output_text,errors_count,running_time
