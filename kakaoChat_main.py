@@ -48,20 +48,22 @@ def KrCheck_result():
   input_text = input_text['action']['detailParams']['sys_constant']['value']
 
   output_text = KrCheck.KrCheck(input_text)
-  print(output_text.checked)
+  errors_count = output_text.errors
+  running_time = output_text.time
+  output_text = output_text.checked
 
   dataSend = {
     "version": "2.0",
     "template": {
       "outputs": [{
         "simpleText": {
-          "text": "수정 완료\n%s"%(output_text.checked)
+          "text": "수정 완료\n%s"%(output_text)
           },
         "simpleText": {
-          "text": "에러 개수: %s"%(str(output_text.errors))
+          "text": "에러 개수: %s"%(str(errors_count))
           },
         "simpleText": {
-          "text": "걸린 시간: %s"%(str(output_text.time))
+          "text": "걸린 시간: %s"%(str(running_time))
           }
         }
       ]
