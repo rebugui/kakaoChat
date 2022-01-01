@@ -56,7 +56,6 @@ def KrCheck_result():
       "outputs": [{
         "simpleText": {
           "text": "입력 : %s"%(input_text)
-          "text": "출력 : %s"%(input_text)
           }
         }
       ]
