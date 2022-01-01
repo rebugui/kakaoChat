@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-import sys
+import imp, sys
 from hanspell import spell_checker
-reload(sys)
+imp.reload(sys)
 sys.setdefaultencoding("utf-8")
 
 def KrCheck(input):
