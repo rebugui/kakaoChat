@@ -1,5 +1,5 @@
-# server.py
 # -*- coding: utf-8 -*-
+# server.py
 from flask import Flask, request, jsonify
 from datetime import datetime
 import sys, boannews, saramin, WS_calendar, json
@@ -43,7 +43,8 @@ def test():
 def KrCheck_result():
   content = request.get_json()
   print("입력 테스트 입니다.")
-  print(content)
+  req : dict = request.get_json()
+  print(req)
   content = content['userRequest']
   content = content['utterance']
   dataSend = {
