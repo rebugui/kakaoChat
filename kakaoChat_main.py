@@ -57,11 +57,9 @@ def KrCheck_result():
         "simpleText": {
           "text": "수정 완료\n%s"%(output_text.checked)
           },
-        {
         "simpleText": {
           "text": "에러 개수: %s"%(str(output_text.errors))
           },
-        {
         "simpleText": {
           "text": "걸린 시간: %s"%(str(output_text.time))
           }
