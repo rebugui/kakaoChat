@@ -57,7 +57,7 @@ def KrCheck_result():
           "text": "입력 값입니다.: %s"%(content)
           }
         }
-      ]A
+      ]
     }
   }
   return jsonify(dataSend)
