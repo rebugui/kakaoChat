@@ -2,7 +2,7 @@
 # server.py
 from flask import Flask, request, jsonify
 from datetime import datetime
-import sys, boannews, saramin, WS_calendar, json
+import sys, boannews, saramin, WS_calendar, json, KrCheck
 
 app = Flask(__name__)
 
@@ -47,14 +47,16 @@ def KrCheck_result():
   input_text = request.get_json()
   input_text = input_text['action']['detailParams']['sys_constant']['value']
 
-  print (input_text)
+  output_text = KrCheck.KrCheck(output_text)
+  print(output_text)
 
   dataSend = {
     "version": "2.0",
     "template": {
       "outputs": [{
         "simpleText": {
-          "text": "입력 값입니다.: %s"%(content)
+          "text": "입력 : %s"%(input_text)
+          "text": "출력 : %s"%(input_text)
           }
         }
       ]
