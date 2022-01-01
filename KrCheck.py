@@ -13,7 +13,7 @@ def KrCheck(input):
             input_list.append(i)
     
     output_text = spell_checker.check(input_list)
-    for i in output_text:
+    for output_text in output_text:
         errors_count = errors_count + int(output_text.errors)
         running_time = running_time + int(output_text.time)
         output_text.append(output_text.checked)
