@@ -45,9 +45,9 @@ def KrCheck_result():
   content = content['userRequest']
   content = content['utterance']
   input_text = request.get_json()
-  input_text = json.loads(input_text['action']['detailParams']['sys_constant']['value'])
-
+  input_text = json.loads(input_text['action']['detailParams'])
   print (input_text)
+
   dataSend = {
     "version": "2.0",
     "template": {
