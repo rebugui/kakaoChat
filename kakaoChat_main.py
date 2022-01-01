@@ -42,11 +42,10 @@ def test():
 @app.route('/KrCheck_result', methods=['POST'])
 def KrCheck_result():
   content = request.get_json()
-  print("입력 테스트 입니다.")
-  req : dict = request.get_json()
-  print(req)
   content = content['userRequest']
   content = content['utterance']
+  input_text = request.get_json()
+  print (input_text)
   dataSend = {
     "version": "2.0",
     "template": {
