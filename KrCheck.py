@@ -6,6 +6,7 @@ def KrCheck(input):
     input_list =  [""]
     running_time = 0
     errors_count = 0
+    output_text = ""
     for i in input_convert:
         if len(input_list[-1]) + len(i) < 500:
             input_list[-1] += i
