@@ -13,8 +13,9 @@ def KrCheck(input):
             input_list.append(i)
     
     output_text = spell_checker.check(input_list)
-    errors_count = output_text.errors
-    running_time = output_text.time
-    output_text = output_text.checked
+    for i in output_text:
+        errors_count = errors_count + output_text.errors
+        running_time = running_time + output_text.time
+        output_text.append(output_text.checked)
 
     return output_text,errors_count,running_time
