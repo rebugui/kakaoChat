@@ -38,6 +38,26 @@ def test():
   }
   return jsonify(dataSend)
 
+@app.route('/KrCheck_result', methods=['POST'])
+def KrCheck_result():
+  content = request.get_json()
+  print("입력 테스트 입니다.")
+  print(content)
+  content = content['userRequest']
+  content = content['utterance']
+  dataSend = {
+    "version": "2.0",
+    "template": {
+      "outputs": [{
+        "simpleText": {
+          "text": "입력 값입니다.: %s"%(content)
+          }
+        }
+      ]
+    }
+  }
+  return jsonify(dataSend)
+
 @app.route('/boannews_print', methods=['POST'])
 def boannews_print():
   content = request.get_json()
