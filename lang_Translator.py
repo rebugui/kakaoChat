@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 from googletrans import Translator
 
-def lang_Translator():
+#def lang_Translator():
 
-    input_text = "ÇÑ±¹¾î¸¦ ÀÔ·ÂÇÏ¸é ¿µ¾î·Î ³ª¿É´Ï´Ù."
-    translator = Translator()
-    
-    lang = translator.detect(input_text).lang
+input_text = "ìš”ê±´ í•œê¸€ì´ì—ì˜."
+translator = Translator()
 
-    if lang == 'kr':
-        result = translator.translate(text1, src=lang, dest='en')    
-    else:
-        result = translator.translate(text1, src=lang, dest='kr')
-    
-    print(output_text)
+lang = translator.detect(input_text).lang
+if lang == 'kr':
+    output_text = translator.translate(input_text, src=lang, dest='en')    
+else:
+    output_text = translator.translate(input_text, src=lang, dest='kr')
+
+print(output_text)
 #    return output_text
