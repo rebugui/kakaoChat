@@ -2,7 +2,7 @@
 # server.py
 from flask import Flask, request, jsonify
 from datetime import datetime
-import sys, boannews, saramin, WS_calendar, json, KrCheck
+import sys, boannews, saramin, WS_calendar, json, KrCheck, lang_Translator
 
 app = Flask(__name__)
 
@@ -33,6 +33,29 @@ def test():
         "simpleText": {
           "text": "간단한 텍스트 요소입니다."
           }
+        }
+      ]
+    }
+  }
+  return jsonify(dataSend)
+
+@app.route('/lang_Translator_result', methods=['POST'])
+def lang_Translator_result():
+  content = request.get_json()
+  content = content['userRequest']
+  content = content['utterance']
+  input_text = request.get_json()
+  input_text = input_text['action']['detailParams']['sys_constant']['value']
+
+  output_text = lang_Translator.lang_Translator(input_text)
+
+  dataSend = {
+    "version": "2.0",
+    "template": {
+      "outputs": [{
+        "simpleText": {
+          "text": "번역 완료\n%s"%(output_text)
+          },
         }
       ]
     }
